@@ -1,4 +1,4 @@
-package org.springframework.beans;
+package com.xboge.beans;
 
 public class Person {
 	private Integer id;
