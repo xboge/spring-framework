@@ -165,7 +165,7 @@ public class EnableTransactionManagementTests {
 	}
 
 	/**
-	 * A cheap test just to prove that in ASPECTJ mode, the AnnotationTransactionAspect does indeed
+	 * A cheap test just to prove that in ASPECTJ beans, the AnnotationTransactionAspect does indeed
 	 * get loaded -- or in this case, attempted to be loaded at which point the test fails.
 	 */
 	@Test

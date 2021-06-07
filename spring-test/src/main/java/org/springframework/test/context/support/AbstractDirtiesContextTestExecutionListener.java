@@ -61,7 +61,7 @@ public abstract class AbstractDirtiesContextTestExecutionListener extends Abstra
 	 * REINJECT_DEPENDENCIES_ATTRIBUTE} in the test context to {@code true}.
 	 * @param testContext the test context whose application context should
 	 * be marked as dirty
-	 * @param hierarchyMode the context cache clearing mode to be applied if the
+	 * @param hierarchyMode the context cache clearing beans to be applied if the
 	 * context is part of a hierarchy; may be {@code null}
 	 * @since 3.2.2
 	 */
@@ -75,9 +75,9 @@ public abstract class AbstractDirtiesContextTestExecutionListener extends Abstra
 	 * by dirtying the context if appropriate (i.e., according to the required modes).
 	 * @param testContext the test context whose application context should
 	 * potentially be marked as dirty; never {@code null}
-	 * @param requiredMethodMode the method mode required for a context to
+	 * @param requiredMethodMode the method beans required for a context to
 	 * be marked dirty in the current phase; never {@code null}
-	 * @param requiredClassMode the class mode required for a context to
+	 * @param requiredClassMode the class beans required for a context to
 	 * be marked dirty in the current phase; never {@code null}
 	 * @throws Exception allows any exception to propagate
 	 * @since 4.2
@@ -105,7 +105,7 @@ public abstract class AbstractDirtiesContextTestExecutionListener extends Abstra
 		if (logger.isDebugEnabled()) {
 			String phase = (requiredClassMode.name().startsWith("BEFORE") ? "Before" : "After");
 			logger.debug(String.format("%s test method: context %s, class annotated with @DirtiesContext [%s] "
-					+ "with mode [%s], method annotated with @DirtiesContext [%s] with mode [%s].", phase, testContext,
+					+ "with beans [%s], method annotated with @DirtiesContext [%s] with beans [%s].", phase, testContext,
 				classAnnotated, classMode, methodAnnotated, methodMode));
 		}
 
@@ -117,10 +117,10 @@ public abstract class AbstractDirtiesContextTestExecutionListener extends Abstra
 
 	/**
 	 * Perform the actual work for {@link #beforeTestClass} and {@link #afterTestClass}
-	 * by dirtying the context if appropriate (i.e., according to the required mode).
+	 * by dirtying the context if appropriate (i.e., according to the required beans).
 	 * @param testContext the test context whose application context should
 	 * potentially be marked as dirty; never {@code null}
-	 * @param requiredClassMode the class mode required for a context to
+	 * @param requiredClassMode the class beans required for a context to
 	 * be marked dirty in the current phase; never {@code null}
 	 * @throws Exception allows any exception to propagate
 	 * @since 4.2
@@ -140,7 +140,7 @@ public abstract class AbstractDirtiesContextTestExecutionListener extends Abstra
 		if (logger.isDebugEnabled()) {
 			String phase = (requiredClassMode.name().startsWith("BEFORE") ? "Before" : "After");
 			logger.debug(String.format(
-				"%s test class: context %s, class annotated with @DirtiesContext [%s] with mode [%s].", phase,
+				"%s test class: context %s, class annotated with @DirtiesContext [%s] with beans [%s].", phase,
 				testContext, classAnnotated, classMode));
 		}
 

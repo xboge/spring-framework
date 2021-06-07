@@ -222,11 +222,11 @@ public class HibernateTemplate implements HibernateOperations, InitializingBean 
 	}
 
 	/**
-	 * Set whether to check that the Hibernate Session is not in read-only mode
+	 * Set whether to check that the Hibernate Session is not in read-only beans
 	 * in case of write operations (save/update/delete).
 	 * <p>Default is "true", for fail-fast behavior when attempting write operations
 	 * within a read-only transaction. Turn this off to allow save/update/delete
-	 * on a Session with flush mode MANUAL.
+	 * on a Session with flush beans MANUAL.
 	 * @see #checkWriteOperationAllowed
 	 * @see org.springframework.transaction.TransactionDefinition#isReadOnly
 	 */
@@ -236,7 +236,7 @@ public class HibernateTemplate implements HibernateOperations, InitializingBean 
 
 	/**
 	 * Return whether to check that the Hibernate Session is not in read-only
-	 * mode in case of write operations (save/update/delete).
+	 * beans in case of write operations (save/update/delete).
 	 */
 	public boolean isCheckWriteOperations() {
 		return this.checkWriteOperations;
@@ -1093,7 +1093,7 @@ public class HibernateTemplate implements HibernateOperations, InitializingBean 
 	protected void checkWriteOperationAllowed(Session session) throws InvalidDataAccessApiUsageException {
 		if (isCheckWriteOperations() && SessionFactoryUtils.getFlushMode(session).lessThan(FlushMode.COMMIT)) {
 			throw new InvalidDataAccessApiUsageException(
-					"Write operations are not allowed in read-only mode (FlushMode.MANUAL): "+
+					"Write operations are not allowed in read-only beans (FlushMode.MANUAL): "+
 					"Turn your Session into FlushMode.COMMIT/AUTO or remove 'readOnly' marker from transaction definition.");
 		}
 	}

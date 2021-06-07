@@ -109,7 +109,7 @@ public abstract class AbstractAopProxyTests {
 
 
 	/**
-	 * Set in CGLIB or JDK mode.
+	 * Set in CGLIB or JDK beans.
 	 */
 	protected abstract Object createProxy(ProxyCreatorSupport as);
 

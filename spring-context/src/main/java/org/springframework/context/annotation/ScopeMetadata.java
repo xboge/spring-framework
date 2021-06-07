@@ -55,7 +55,7 @@ public class ScopeMetadata {
 	}
 
 	/**
-	 * Set the proxy-mode to be applied to the scoped instance.
+	 * Set the proxy-beans to be applied to the scoped instance.
 	 */
 	public void setScopedProxyMode(ScopedProxyMode scopedProxyMode) {
 		Assert.notNull(scopedProxyMode, "'scopedProxyMode' must not be null");
@@ -63,7 +63,7 @@ public class ScopeMetadata {
 	}
 
 	/**
-	 * Get the proxy-mode to be applied to the scoped instance.
+	 * Get the proxy-beans to be applied to the scoped instance.
 	 */
 	public ScopedProxyMode getScopedProxyMode() {
 		return this.scopedProxyMode;

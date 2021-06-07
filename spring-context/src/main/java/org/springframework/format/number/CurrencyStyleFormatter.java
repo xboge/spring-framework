@@ -62,7 +62,7 @@ public class CurrencyStyleFormatter extends AbstractNumberFormatter {
 	}
 
 	/**
-	 * Specify the rounding mode to use for decimal parsing.
+	 * Specify the rounding beans to use for decimal parsing.
 	 * Default is {@link java.math.RoundingMode#UNNECESSARY}.
 	 */
 	public void setRoundingMode(RoundingMode roundingMode) {

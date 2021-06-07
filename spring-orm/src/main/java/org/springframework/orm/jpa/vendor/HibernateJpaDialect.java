@@ -183,7 +183,7 @@ public class HibernateJpaDialect extends DefaultJpaDialect {
 		// Standard JPA transaction begin call for full JPA context setup...
 		entityManager.getTransaction().begin();
 
-		// Adapt flush mode and store previous isolation level, if any.
+		// Adapt flush beans and store previous isolation level, if any.
 		FlushMode previousFlushMode = prepareFlushMode(session, definition.isReadOnly());
 		if (definition instanceof ResourceTransactionDefinition &&
 				((ResourceTransactionDefinition) definition).isLocalResource()) {
@@ -393,7 +393,7 @@ public class HibernateJpaDialect extends DefaultJpaDialect {
 				if (conToReset != this.preparedCon) {
 					LogFactory.getLog(HibernateJpaDialect.class).warn(
 							"JDBC Connection to reset not identical to originally prepared Connection - please " +
-							"make sure to use connection release mode ON_CLOSE (the default) and to run against " +
+							"make sure to use connection release beans ON_CLOSE (the default) and to run against " +
 							"Hibernate 4.2+ (or switch HibernateJpaDialect's prepareConnection flag to false");
 				}
 				DataSourceUtils.resetConnectionAfterTransaction(

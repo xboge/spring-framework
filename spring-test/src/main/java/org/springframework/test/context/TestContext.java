@@ -134,7 +134,7 @@ public interface TestContext extends AttributeAccessor, Serializable {
 	 * <p>Do this if a test has modified the context &mdash; for example, by
 	 * modifying the state of a singleton bean, modifying the state of an embedded
 	 * database, etc.
-	 * @param hierarchyMode the context cache clearing mode to be applied if the
+	 * @param hierarchyMode the context cache clearing beans to be applied if the
 	 * context is part of a hierarchy (may be {@code null})
 	 */
 	void markApplicationContextDirty(@Nullable HierarchyMode hierarchyMode);

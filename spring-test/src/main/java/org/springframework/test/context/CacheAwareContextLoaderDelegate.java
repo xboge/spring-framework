@@ -92,7 +92,7 @@ public interface CacheAwareContextLoaderDelegate {
 	 * the cache.
 	 * @param mergedContextConfiguration the merged context configuration for the
 	 * application context to close; never {@code null}
-	 * @param hierarchyMode the hierarchy mode; may be {@code null} if the context
+	 * @param hierarchyMode the hierarchy beans; may be {@code null} if the context
 	 * is not part of a hierarchy
 	 * @since 4.1
 	 * @see #isContextLoaded

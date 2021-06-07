@@ -118,7 +118,7 @@ public abstract class SessionFactoryUtils {
 
 	/**
 	 * Get the native Hibernate FlushMode, adapting between Hibernate 5.0/5.1 and 5.2+.
-	 * @param session the Hibernate Session to get the flush mode from
+	 * @param session the Hibernate Session to get the flush beans from
 	 * @return the FlushMode (never {@code null})
 	 * @since 4.3
 	 */

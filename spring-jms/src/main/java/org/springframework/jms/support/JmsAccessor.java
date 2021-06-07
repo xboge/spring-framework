@@ -91,7 +91,7 @@ public abstract class JmsAccessor implements InitializingBean {
 	}
 
 	/**
-	 * Set the transaction mode that is used when creating a JMS {@link Session}.
+	 * Set the transaction beans that is used when creating a JMS {@link Session}.
 	 * Default is "false".
 	 * <p>Note that within a JTA transaction, the parameters passed to
 	 * {@code create(Queue/Topic)Session(boolean transacted, int acknowledgeMode)}
@@ -122,11 +122,11 @@ public abstract class JmsAccessor implements InitializingBean {
 	}
 
 	/**
-	 * Set the JMS acknowledgement mode by the name of the corresponding constant
+	 * Set the JMS acknowledgement beans by the name of the corresponding constant
 	 * in the JMS {@link Session} interface, e.g. "CLIENT_ACKNOWLEDGE".
-	 * <p>If you want to use vendor-specific extensions to the acknowledgment mode,
+	 * <p>If you want to use vendor-specific extensions to the acknowledgment beans,
 	 * use {@link #setSessionAcknowledgeMode(int)} instead.
-	 * @param constantName the name of the {@link Session} acknowledge mode constant
+	 * @param constantName the name of the {@link Session} acknowledge beans constant
 	 * @see javax.jms.Session#AUTO_ACKNOWLEDGE
 	 * @see javax.jms.Session#CLIENT_ACKNOWLEDGE
 	 * @see javax.jms.Session#DUPS_OK_ACKNOWLEDGE
@@ -137,16 +137,16 @@ public abstract class JmsAccessor implements InitializingBean {
 	}
 
 	/**
-	 * Set the JMS acknowledgement mode that is used when creating a JMS
+	 * Set the JMS acknowledgement beans that is used when creating a JMS
 	 * {@link Session} to send a message.
 	 * <p>Default is {@link Session#AUTO_ACKNOWLEDGE}.
-	 * <p>Vendor-specific extensions to the acknowledgment mode can be set here as well.
+	 * <p>Vendor-specific extensions to the acknowledgment beans can be set here as well.
 	 * <p>Note that inside an EJB, the parameters to the
 	 * {@code create(Queue/Topic)Session(boolean transacted, int acknowledgeMode)} method
 	 * are not taken into account. Depending on the transaction context in the EJB,
 	 * the container makes its own decisions on these values. See section 17.3.5
 	 * of the EJB spec.
-	 * @param sessionAcknowledgeMode the acknowledgement mode constant
+	 * @param sessionAcknowledgeMode the acknowledgement beans constant
 	 * @see javax.jms.Session#AUTO_ACKNOWLEDGE
 	 * @see javax.jms.Session#CLIENT_ACKNOWLEDGE
 	 * @see javax.jms.Session#DUPS_OK_ACKNOWLEDGE
@@ -157,7 +157,7 @@ public abstract class JmsAccessor implements InitializingBean {
 	}
 
 	/**
-	 * Return the acknowledgement mode for JMS {@link Session sessions}.
+	 * Return the acknowledgement beans for JMS {@link Session sessions}.
 	 */
 	public int getSessionAcknowledgeMode() {
 		return this.sessionAcknowledgeMode;
@@ -209,10 +209,10 @@ public abstract class JmsAccessor implements InitializingBean {
 	}
 
 	/**
-	 * Determine whether the given Session is in client acknowledge mode.
+	 * Determine whether the given Session is in client acknowledge beans.
 	 * <p>This implementation uses JMS 1.1 API.
 	 * @param session the JMS Session to check
-	 * @return whether the given Session is in client acknowledge mode
+	 * @return whether the given Session is in client acknowledge beans
 	 * @throws javax.jms.JMSException if thrown by JMS API methods
 	 * @see javax.jms.Session#getAcknowledgeMode()
 	 * @see javax.jms.Session#CLIENT_ACKNOWLEDGE

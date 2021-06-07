@@ -62,7 +62,7 @@ public class JmsMessageHeaderAccessor extends NativeMessageHeaderAccessor {
 	}
 
 	/**
-	 * Return the {@link JmsHeaders#DELIVERY_MODE delivery mode}.
+	 * Return the {@link JmsHeaders#DELIVERY_MODE delivery beans}.
 	 * @see JmsHeaders#DELIVERY_MODE
 	 */
 	@Nullable

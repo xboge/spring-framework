@@ -277,7 +277,7 @@ public class XStreamMarshaller extends AbstractMarshaller implements BeanClassLo
 	}
 
 	/**
-	 * Set the XStream mode to use.
+	 * Set the XStream beans to use.
 	 * @see XStream#ID_REFERENCES
 	 * @see XStream#NO_REFERENCES
 	 */
@@ -359,7 +359,7 @@ public class XStreamMarshaller extends AbstractMarshaller implements BeanClassLo
 	}
 
 	/**
-	 * Activate XStream's autodetection mode.
+	 * Activate XStream's autodetection beans.
 	 * <p><b>Note</b>: Autodetection implies that the XStream instance is being configured while
 	 * it is processing the XML streams, and thus introduces a potential concurrency problem.
 	 * @see XStream#autodetectAnnotations(boolean)

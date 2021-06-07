@@ -88,7 +88,7 @@ public abstract class TimerManagerAccessor extends JndiLocatorSupport
 	 * has been explicitly declared as 'Shareable'. Note that WebLogic's
 	 * cluster-aware Job Scheduler is a shared TimerManager too.
 	 * <p>The sole difference between this FactoryBean being in shared or
-	 * non-shared mode is that it will only attempt to suspend / resume / stop
+	 * non-shared beans is that it will only attempt to suspend / resume / stop
 	 * the underlying TimerManager in case of an independent (non-shared) instance.
 	 * This only affects the {@link org.springframework.context.Lifecycle} support
 	 * as well as application context shutdown.

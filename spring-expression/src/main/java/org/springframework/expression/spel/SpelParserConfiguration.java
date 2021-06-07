@@ -33,7 +33,7 @@ public class SpelParserConfiguration {
 	private static final SpelCompilerMode defaultCompilerMode;
 
 	static {
-		String compilerMode = SpringProperties.getProperty("spring.expression.compiler.mode");
+		String compilerMode = SpringProperties.getProperty("spring.expression.compiler.beans");
 		defaultCompilerMode = (compilerMode != null ?
 				SpelCompilerMode.valueOf(compilerMode.toUpperCase()) : SpelCompilerMode.OFF);
 	}
@@ -60,7 +60,7 @@ public class SpelParserConfiguration {
 
 	/**
 	 * Create a new {@code SpelParserConfiguration} instance.
-	 * @param compilerMode the compiler mode for the parser
+	 * @param compilerMode the compiler beans for the parser
 	 * @param compilerClassLoader the ClassLoader to use as the basis for expression compilation
 	 */
 	public SpelParserConfiguration(@Nullable SpelCompilerMode compilerMode, @Nullable ClassLoader compilerClassLoader) {
@@ -89,7 +89,7 @@ public class SpelParserConfiguration {
 
 	/**
 	 * Create a new {@code SpelParserConfiguration} instance.
-	 * @param compilerMode the compiler mode that parsers using this configuration object should use
+	 * @param compilerMode the compiler beans that parsers using this configuration object should use
 	 * @param compilerClassLoader the ClassLoader to use as the basis for expression compilation
 	 * @param autoGrowNullReferences if null references should automatically grow
 	 * @param autoGrowCollections if collections should automatically grow
@@ -107,7 +107,7 @@ public class SpelParserConfiguration {
 
 
 	/**
-	 * Return the configuration mode for parsers using this configuration object.
+	 * Return the configuration beans for parsers using this configuration object.
 	 */
 	public SpelCompilerMode getCompilerMode() {
 		return this.compilerMode;

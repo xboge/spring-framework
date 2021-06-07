@@ -59,7 +59,7 @@ public class ServerSentEventHttpMessageReader implements HttpMessageReader<Objec
 
 
 	/**
-	 * Constructor without a {@code Decoder}. In this mode only {@code String}
+	 * Constructor without a {@code Decoder}. In this beans only {@code String}
 	 * is supported as the data of an event.
 	 */
 	public ServerSentEventHttpMessageReader() {

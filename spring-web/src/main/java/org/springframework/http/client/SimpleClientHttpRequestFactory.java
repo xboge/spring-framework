@@ -118,7 +118,7 @@ public class SimpleClientHttpRequestFactory implements ClientHttpRequestFactory,
 	}
 
 	/**
-	 * Set if the underlying URLConnection can be set to 'output streaming' mode.
+	 * Set if the underlying URLConnection can be set to 'output streaming' beans.
 	 * Default is {@code true}.
 	 * <p>When output streaming is enabled, authentication and redirection cannot be handled automatically.
 	 * If output streaming is disabled, the {@link HttpURLConnection#setFixedLengthStreamingMode} and

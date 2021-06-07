@@ -87,7 +87,7 @@ import org.springframework.util.Assert;
  * inline elements and attachments are still a major compatibility issue
  * between email clients: It's virtually impossible to get inline elements
  * and attachments working across Microsoft Outlook, Lotus Notes and Mac Mail.
- * Consider choosing a specific multipart mode for your needs: The javadoc
+ * Consider choosing a specific multipart beans for your needs: The javadoc
  * on the MULTIPART_MODE constants contains more detailed information.
  *
  * @author Juergen Hoeller
@@ -123,7 +123,7 @@ public class MimeMessageHelper {
 	 * element of type "related". Texts, inline elements and attachements
 	 * will all get added to that root element.
 	 * <p>This was the default behavior from Spring 1.1 up to 1.2 final.
-	 * This is the "Microsoft multipart mode", as natively sent by Outlook.
+	 * This is the "Microsoft multipart beans", as natively sent by Outlook.
 	 * It is known to work properly on Outlook, Outlook Express, Yahoo Mail, and
 	 * to a large degree also on Mac Mail (with an additional attachment listed
 	 * for an inline element, despite the inline element also shown inline).
@@ -210,11 +210,11 @@ public class MimeMessageHelper {
 
 	/**
 	 * Create a new MimeMessageHelper for the given MimeMessage,
-	 * in multipart mode (supporting alternative texts, inline
+	 * in multipart beans (supporting alternative texts, inline
 	 * elements and attachments) if requested.
 	 * <p>Consider using the MimeMessageHelper constructor that
 	 * takes a multipartMode argument to choose a specific multipart
-	 * mode other than MULTIPART_MODE_MIXED_RELATED.
+	 * beans other than MULTIPART_MODE_MIXED_RELATED.
 	 * <p>The character encoding for the message will be taken from
 	 * the passed-in MimeMessage object, if carried there. Else,
 	 * JavaMail's default encoding will be used.
@@ -233,11 +233,11 @@ public class MimeMessageHelper {
 
 	/**
 	 * Create a new MimeMessageHelper for the given MimeMessage,
-	 * in multipart mode (supporting alternative texts, inline
+	 * in multipart beans (supporting alternative texts, inline
 	 * elements and attachments) if requested.
 	 * <p>Consider using the MimeMessageHelper constructor that
 	 * takes a multipartMode argument to choose a specific multipart
-	 * mode other than MULTIPART_MODE_MIXED_RELATED.
+	 * beans other than MULTIPART_MODE_MIXED_RELATED.
 	 * @param mimeMessage the mime message to work on
 	 * @param multipart whether to create a multipart message that
 	 * supports alternative texts, inline elements and attachments
@@ -254,7 +254,7 @@ public class MimeMessageHelper {
 
 	/**
 	 * Create a new MimeMessageHelper for the given MimeMessage,
-	 * in multipart mode (supporting alternative texts, inline
+	 * in multipart beans (supporting alternative texts, inline
 	 * elements and attachments) if requested.
 	 * <p>The character encoding for the message will be taken from
 	 * the passed-in MimeMessage object, if carried there. Else,
@@ -276,7 +276,7 @@ public class MimeMessageHelper {
 
 	/**
 	 * Create a new MimeMessageHelper for the given MimeMessage,
-	 * in multipart mode (supporting alternative texts, inline
+	 * in multipart beans (supporting alternative texts, inline
 	 * elements and attachments) if requested.
 	 * @param mimeMessage the mime message to work on
 	 * @param multipartMode which kind of multipart message to create
@@ -320,7 +320,7 @@ public class MimeMessageHelper {
 	 * element itself (MULTIPART_MODE_MIXED, MULTIPART_MODE_RELATED).
 	 * @param mimeMessage the MimeMessage object to add the root MimeMultipart
 	 * object to
-	 * @param multipartMode the multipart mode, as passed into the constructor
+	 * @param multipartMode the multipart beans, as passed into the constructor
 	 * (MIXED, RELATED, MIXED_RELATED, or NO)
 	 * @throws MessagingException if multipart creation failed
 	 * @see #setMimeMultiparts
@@ -372,7 +372,7 @@ public class MimeMessageHelper {
 	}
 
 	/**
-	 * Return whether this helper is in multipart mode,
+	 * Return whether this helper is in multipart beans,
 	 * i.e. whether it holds a multipart message.
 	 * @see #MimeMessageHelper(MimeMessage, boolean)
 	 */
@@ -385,14 +385,14 @@ public class MimeMessageHelper {
 	 * Can be used to manually add attachments.
 	 * <p>This will be the direct content of the MimeMessage,
 	 * in case of a multipart mail.
-	 * @throws IllegalStateException if this helper is not in multipart mode
+	 * @throws IllegalStateException if this helper is not in multipart beans
 	 * @see #isMultipart
 	 * @see #getMimeMessage
 	 * @see javax.mail.internet.MimeMultipart#addBodyPart
 	 */
 	public final MimeMultipart getRootMimeMultipart() throws IllegalStateException {
 		if (this.rootMimeMultipart == null) {
-			throw new IllegalStateException("Not in multipart mode - " +
+			throw new IllegalStateException("Not in multipart beans - " +
 					"create an appropriate MimeMessageHelper via a constructor that takes a 'multipart' flag " +
 					"if you need to set alternative texts or add inline elements or attachments.");
 		}
@@ -404,14 +404,14 @@ public class MimeMessageHelper {
 	 * Can be used to manually add body parts, inline elements, etc.
 	 * <p>This will be nested within the root MimeMultipart,
 	 * in case of a multipart mail.
-	 * @throws IllegalStateException if this helper is not in multipart mode
+	 * @throws IllegalStateException if this helper is not in multipart beans
 	 * @see #isMultipart
 	 * @see #getRootMimeMultipart
 	 * @see javax.mail.internet.MimeMultipart#addBodyPart
 	 */
 	public final MimeMultipart getMimeMultipart() throws IllegalStateException {
 		if (this.mimeMultipart == null) {
-			throw new IllegalStateException("Not in multipart mode - " +
+			throw new IllegalStateException("Not in multipart beans - " +
 					"create an appropriate MimeMessageHelper via a constructor that takes a 'multipart' flag " +
 					"if you need to set alternative texts or add inline elements or attachments.");
 		}
@@ -782,8 +782,8 @@ public class MimeMessageHelper {
 
 
 	/**
-	 * Set the given text directly as content in non-multipart mode
-	 * or as default body part in multipart mode.
+	 * Set the given text directly as content in non-multipart beans
+	 * or as default body part in multipart beans.
 	 * Always applies the default content type "text/plain".
 	 * <p><b>NOTE:</b> Invoke {@link #addInline} <i>after</i> {@code setText};
 	 * else, mail readers might not be able to resolve inline references correctly.
@@ -795,8 +795,8 @@ public class MimeMessageHelper {
 	}
 
 	/**
-	 * Set the given text directly as content in non-multipart mode
-	 * or as default body part in multipart mode.
+	 * Set the given text directly as content in non-multipart beans
+	 * or as default body part in multipart beans.
 	 * The "html" flag determines the content type to apply.
 	 * <p><b>NOTE:</b> Invoke {@link #addInline} <i>after</i> {@code setText};
 	 * else, mail readers might not be able to resolve inline references correctly.
@@ -824,7 +824,7 @@ public class MimeMessageHelper {
 
 	/**
 	 * Set the given plain text and HTML text as alternatives, offering
-	 * both options to the email client. Requires multipart mode.
+	 * both options to the email client. Requires multipart beans.
 	 * <p><b>NOTE:</b> Invoke {@link #addInline} <i>after</i> {@code setText};
 	 * else, mail readers might not be able to resolve inline references correctly.
 	 * @param plainText the plain text for the message

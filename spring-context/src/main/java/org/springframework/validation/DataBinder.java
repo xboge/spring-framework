@@ -203,7 +203,7 @@ public class DataBinder implements PropertyEditorRegistry, TypeConverter {
 	 * instead of resulting in an exception. This flag also enables auto-growth of collection elements
 	 * when accessing an out-of-bounds index.
 	 * <p>Default is "true" on a standard DataBinder. Note that since Spring 4.1 this feature is supported
-	 * for bean property access (DataBinder's default mode) and field access.
+	 * for bean property access (DataBinder's default beans) and field access.
 	 * @see #initBeanPropertyAccess()
 	 * @see org.springframework.beans.BeanWrapper#setAutoGrowNestedPaths
 	 */

@@ -75,7 +75,7 @@ public abstract class TestConstructorUtils {
 	 * <em>meta-present</em> on the test class with
 	 * {@link TestConstructor#autowireMode() autowireMode} set to
 	 * {@link AutowireMode#ALL ALL}.</li>
-	 * <li>The default <em>test constructor autowire mode</em> has been changed
+	 * <li>The default <em>test constructor autowire beans</em> has been changed
 	 * to {@code ALL} (see
 	 * {@link TestConstructor#TEST_CONSTRUCTOR_AUTOWIRE_MODE_PROPERTY_NAME}).</li>
 	 * </ol>
@@ -107,7 +107,7 @@ public abstract class TestConstructorUtils {
 				}
 				catch (Exception ex) {
 					if (logger.isDebugEnabled()) {
-						logger.debug(String.format("Failed to parse autowire mode '%s' for property '%s': %s", value,
+						logger.debug(String.format("Failed to parse autowire beans '%s' for property '%s': %s", value,
 							TestConstructor.TEST_CONSTRUCTOR_AUTOWIRE_MODE_PROPERTY_NAME, ex.getMessage()));
 					}
 				}

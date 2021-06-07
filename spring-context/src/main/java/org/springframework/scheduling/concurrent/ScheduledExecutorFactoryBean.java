@@ -111,9 +111,9 @@ public class ScheduledExecutorFactoryBean extends ExecutorConfigurationSupport
 	}
 
 	/**
-	 * Set the remove-on-cancel mode on {@link ScheduledThreadPoolExecutor}.
+	 * Set the remove-on-cancel beans on {@link ScheduledThreadPoolExecutor}.
 	 * <p>Default is {@code false}. If set to {@code true}, the target executor will be
-	 * switched into remove-on-cancel mode (if possible, with a soft fallback otherwise).
+	 * switched into remove-on-cancel beans (if possible, with a soft fallback otherwise).
 	 */
 	public void setRemoveOnCancelPolicy(boolean removeOnCancelPolicy) {
 		this.removeOnCancelPolicy = removeOnCancelPolicy;

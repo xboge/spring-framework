@@ -284,7 +284,7 @@ public final class BeanDefinitionBuilder {
 	}
 
 	/**
-	 * Set the autowire mode for this definition.
+	 * Set the autowire beans for this definition.
 	 */
 	public BeanDefinitionBuilder setAutowireMode(int autowireMode) {
 		this.beanDefinition.setAutowireMode(autowireMode);
@@ -292,7 +292,7 @@ public final class BeanDefinitionBuilder {
 	}
 
 	/**
-	 * Set the dependency check mode for this definition.
+	 * Set the dependency check beans for this definition.
 	 */
 	public BeanDefinitionBuilder setDependencyCheck(int dependencyCheck) {
 		this.beanDefinition.setDependencyCheck(dependencyCheck);

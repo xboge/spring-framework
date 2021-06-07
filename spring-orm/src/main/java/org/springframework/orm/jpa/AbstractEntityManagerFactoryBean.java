@@ -294,7 +294,7 @@ public abstract class AbstractEntityManagerFactoryBean implements
 	 * Specify an asynchronous executor for background bootstrapping,
 	 * e.g. a {@link org.springframework.core.task.SimpleAsyncTaskExecutor}.
 	 * <p>{@code EntityManagerFactory} initialization will then switch into background
-	 * bootstrap mode, with a {@code EntityManagerFactory} proxy immediately returned for
+	 * bootstrap beans, with a {@code EntityManagerFactory} proxy immediately returned for
 	 * injection purposes instead of waiting for the JPA provider's bootstrapping to complete.
 	 * However, note that the first actual call to a {@code EntityManagerFactory} method will
 	 * then block until the JPA provider's bootstrapping completed, if not ready by then.

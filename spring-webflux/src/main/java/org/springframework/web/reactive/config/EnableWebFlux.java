@@ -71,7 +71,7 @@ import org.springframework.context.annotation.Import;
  * {@code WebFluxConfigurer} that customize the provided configuration.
  *
  * <p>If {@code WebFluxConfigurer} does not expose some setting that needs to be
- * configured, consider switching to an advanced mode by removing the
+ * configured, consider switching to an advanced beans by removing the
  * {@code @EnableWebFlux} annotation and extending directly from
  * {@link WebFluxConfigurationSupport} or {@link DelegatingWebFluxConfiguration} --
  * the latter allows detecting and delegating to one or more

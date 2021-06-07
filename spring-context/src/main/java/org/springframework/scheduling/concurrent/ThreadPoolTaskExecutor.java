@@ -56,7 +56,7 @@ import org.springframework.util.concurrent.ListenableFutureTask;
  * of threads in the pool to a potentially very high number. Consider also setting a
  * {@link #setMaxPoolSize "maxPoolSize"} at that point, as well as possibly a higher
  * {@link #setCorePoolSize "corePoolSize"} (see also the
- * {@link #setAllowCoreThreadTimeOut "allowCoreThreadTimeOut"} mode of scaling).
+ * {@link #setAllowCoreThreadTimeOut "allowCoreThreadTimeOut"} beans of scaling).
  *
  * <p><b>NOTE:</b> This class implements Spring's
  * {@link org.springframework.core.task.TaskExecutor} interface as well as the

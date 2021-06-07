@@ -66,7 +66,7 @@ public class ForwardedHeaderTransformer implements Function<ServerHttpRequest, S
 
 
 	/**
-	 * Enable mode in which any "Forwarded" or "X-Forwarded-*" headers are
+	 * Enable beans in which any "Forwarded" or "X-Forwarded-*" headers are
 	 * removed only and the information in them ignored.
 	 * @param removeOnly whether to discard and ignore forwarded headers
 	 */
@@ -75,7 +75,7 @@ public class ForwardedHeaderTransformer implements Function<ServerHttpRequest, S
 	}
 
 	/**
-	 * Whether the "remove only" mode is on.
+	 * Whether the "remove only" beans is on.
 	 * @see #setRemoveOnly
 	 */
 	public boolean isRemoveOnly() {

@@ -65,7 +65,7 @@ class DirtiesContextInterfaceTests {
 	@Test
 	void verifyDirtiesContextBehavior() throws Exception {
 		runTestClassAndAssertStats(ClassLevelDirtiesContextWithCleanMethodsAndDefaultModeTestCase.class, 1);
-		assertContextCacheStatistics("after class-level @DirtiesContext with clean test method and default class mode",
+		assertContextCacheStatistics("after class-level @DirtiesContext with clean test method and default class beans",
 			0, cacheHits.get(), cacheMisses.incrementAndGet());
 	}
 

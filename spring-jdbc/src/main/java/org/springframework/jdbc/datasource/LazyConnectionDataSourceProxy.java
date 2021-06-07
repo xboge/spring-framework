@@ -35,7 +35,7 @@ import org.springframework.lang.Nullable;
 /**
  * Proxy for a target DataSource, fetching actual JDBC Connections lazily,
  * i.e. not until first creation of a Statement. Connection initialization
- * properties like auto-commit mode, transaction isolation and read-only mode
+ * properties like auto-commit beans, transaction isolation and read-only beans
  * will be kept and applied to the actual JDBC Connection as soon as an
  * actual Connection is fetched (if ever). Consequently, commit and rollback
  * calls will be ignored if no Statements have been created.
@@ -110,7 +110,7 @@ public class LazyConnectionDataSourceProxy extends DelegatingDataSource {
 
 
 	/**
-	 * Set the default auto-commit mode to expose when no target Connection
+	 * Set the default auto-commit beans to expose when no target Connection
 	 * has been fetched yet (-> actual JDBC Connection default not known yet).
 	 * <p>If not specified, the default gets determined by checking a target
 	 * Connection on startup. If that check fails, the default will be determined

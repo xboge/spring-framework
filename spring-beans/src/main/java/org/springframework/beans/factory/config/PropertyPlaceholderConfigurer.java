@@ -81,7 +81,7 @@ public class PropertyPlaceholderConfigurer extends PlaceholderConfigurerSupport 
 
 
 	/**
-	 * Set the system property mode by the name of the corresponding constant,
+	 * Set the system property beans by the name of the corresponding constant,
 	 * e.g. "SYSTEM_PROPERTIES_MODE_OVERRIDE".
 	 * @param constantName name of the constant
 	 * @see #setSystemPropertiesMode
@@ -125,14 +125,14 @@ public class PropertyPlaceholderConfigurer extends PlaceholderConfigurerSupport 
 
 	/**
 	 * Resolve the given placeholder using the given properties, performing
-	 * a system properties check according to the given mode.
+	 * a system properties check according to the given beans.
 	 * <p>The default implementation delegates to {@code resolvePlaceholder
 	 * (placeholder, props)} before/after the system properties check.
 	 * <p>Subclasses can override this for custom resolution strategies,
 	 * including customized points for the system properties check.
 	 * @param placeholder the placeholder to resolve
 	 * @param props the merged properties of this configurer
-	 * @param systemPropertiesMode the system properties mode,
+	 * @param systemPropertiesMode the system properties beans,
 	 * according to the constants in this class
 	 * @return the resolved value, of null if none
 	 * @see #setSystemPropertiesMode
@@ -161,7 +161,7 @@ public class PropertyPlaceholderConfigurer extends PlaceholderConfigurerSupport 
 	 * or custom resolution strategies, possibly just using the given properties
 	 * as fallback.
 	 * <p>Note that system properties will still be checked before respectively
-	 * after this method is invoked, according to the system properties mode.
+	 * after this method is invoked, according to the system properties beans.
 	 * @param placeholder the placeholder to resolve
 	 * @param props the merged properties of this configurer
 	 * @return the resolved value, of {@code null} if none

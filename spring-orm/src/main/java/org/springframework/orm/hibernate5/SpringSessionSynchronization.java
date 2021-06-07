@@ -68,7 +68,7 @@ public class SpringSessionSynchronization implements TransactionSynchronization,
 	public void suspend() {
 		if (this.holderActive) {
 			TransactionSynchronizationManager.unbindResource(this.sessionFactory);
-			// Eagerly disconnect the Session here, to make release mode "on_close" work on JBoss.
+			// Eagerly disconnect the Session here, to make release beans "on_close" work on JBoss.
 			getCurrentSession().disconnect();
 		}
 	}
@@ -103,10 +103,10 @@ public class SpringSessionSynchronization implements TransactionSynchronization,
 		try {
 			Session session = this.sessionHolder.getSession();
 			if (this.sessionHolder.getPreviousFlushMode() != null) {
-				// In case of pre-bound Session, restore previous flush mode.
+				// In case of pre-bound Session, restore previous flush beans.
 				session.setFlushMode(this.sessionHolder.getPreviousFlushMode());
 			}
-			// Eagerly disconnect the Session here, to make release mode "on_close" work nicely.
+			// Eagerly disconnect the Session here, to make release beans "on_close" work nicely.
 			session.disconnect();
 		}
 		finally {

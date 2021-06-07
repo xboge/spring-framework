@@ -58,13 +58,13 @@ public class AnnotationDrivenBeanDefinitionParser implements BeanDefinitionParse
 		// Nest the concrete post-processor bean in the surrounding component.
 		BeanDefinitionRegistry registry = parserContext.getRegistry();
 
-		String mode = element.getAttribute("mode");
+		String mode = element.getAttribute("beans");
 		if ("aspectj".equals(mode)) {
-			// mode="aspectj"
+			// beans="aspectj"
 			registerAsyncExecutionAspect(element, parserContext);
 		}
 		else {
-			// mode="proxy"
+			// beans="proxy"
 			if (registry.containsBeanDefinition(TaskManagementConfigUtils.ASYNC_ANNOTATION_PROCESSOR_BEAN_NAME)) {
 				parserContext.getReaderContext().error(
 						"Only one AsyncAnnotationBeanPostProcessor may exist within the context.", source);

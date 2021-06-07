@@ -74,11 +74,11 @@ public class BeanDefinitionDefaults {
 	}
 
 	/**
-	 * Set the autowire mode. This determines whether any automagical detection
+	 * Set the autowire beans. This determines whether any automagical detection
 	 * and setting of bean references will happen. Default is AUTOWIRE_NO
 	 * which means there won't be convention-based autowiring by name or type
 	 * (however, there may still be explicit annotation-driven autowiring).
-	 * @param autowireMode the autowire mode to set.
+	 * @param autowireMode the autowire beans to set.
 	 * Must be one of the constants defined in {@link AbstractBeanDefinition}.
 	 * @see AbstractBeanDefinition#setAutowireMode
 	 */
@@ -87,7 +87,7 @@ public class BeanDefinitionDefaults {
 	}
 
 	/**
-	 * Return the default autowire mode.
+	 * Return the default autowire beans.
 	 */
 	public int getAutowireMode() {
 		return this.autowireMode;

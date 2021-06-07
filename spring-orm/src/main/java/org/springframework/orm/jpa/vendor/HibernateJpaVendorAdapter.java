@@ -57,7 +57,7 @@ import org.springframework.lang.Nullable;
  * Some settings on this adapter may conflict with native Hibernate configuration rules
  * or custom Hibernate properties. For example, specify either {@link #setDatabase} or
  * Hibernate's "hibernate.dialect_resolvers" property, not both. Also, be careful about
- * Hibernate's connection release mode: This adapter prefers {@code ON_CLOSE} behavior,
+ * Hibernate's connection release beans: This adapter prefers {@code ON_CLOSE} behavior,
  * aligned with {@link HibernateJpaDialect#setPrepareConnection}, at least for non-JTA
  * scenarios; you may override this through corresponding native Hibernate properties.
  *
@@ -94,11 +94,11 @@ public class HibernateJpaVendorAdapter extends AbstractJpaVendorAdapter {
 	 * This is just a convenience flag passed through to {@code HibernateJpaDialect}.
 	 * <p>On Hibernate 5.1+, this flag remains {@code true} by default like against
 	 * previous Hibernate versions. The vendor adapter manually enforces Hibernate's
-	 * new connection handling mode {@code DELAYED_ACQUISITION_AND_HOLD} in that case
-	 * unless a user-specified connection handling mode property indicates otherwise;
+	 * new connection handling beans {@code DELAYED_ACQUISITION_AND_HOLD} in that case
+	 * unless a user-specified connection handling beans property indicates otherwise;
 	 * switch this flag to {@code false} to avoid that interference.
 	 * <p><b>NOTE: For a persistence unit with transaction type JTA e.g. on WebLogic,
-	 * the connection release mode will never be altered from its provider default,
+	 * the connection release beans will never be altered from its provider default,
 	 * i.e. not be forced to {@code DELAYED_ACQUISITION_AND_HOLD} by this flag.</b>
 	 * Alternatively, set Hibernate 5.2's "hibernate.connection.handling_mode"
 	 * property to "DELAYED_ACQUISITION_AND_RELEASE_AFTER_TRANSACTION" or even
@@ -155,7 +155,7 @@ public class HibernateJpaVendorAdapter extends AbstractJpaVendorAdapter {
 		}
 
 		if (connectionReleaseOnClose) {
-			// Hibernate 5.1+: manually enforce connection release mode ON_CLOSE (the former default)
+			// Hibernate 5.1+: manually enforce connection release beans ON_CLOSE (the former default)
 			try {
 				// Try Hibernate 5.2+
 				AvailableSettings.class.getField("CONNECTION_HANDLING");

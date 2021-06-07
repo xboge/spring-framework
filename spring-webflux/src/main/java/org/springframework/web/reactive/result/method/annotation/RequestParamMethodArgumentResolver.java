@@ -35,7 +35,7 @@ import org.springframework.web.server.ServerWebInputException;
  * Resolver for method arguments annotated with @{@link RequestParam} from URI
  * query string parameters.
  *
- * <p>This resolver can also be created in default resolution mode in which
+ * <p>This resolver can also be created in default resolution beans in which
  * simple types (int, long, etc.) not annotated with @{@link RequestParam} are
  * also treated as request parameters with the parameter name derived from the
  * argument name.
@@ -57,12 +57,12 @@ public class RequestParamMethodArgumentResolver extends AbstractNamedValueSyncAr
 
 
 	/**
-	 * Class constructor with a default resolution mode flag.
+	 * Class constructor with a default resolution beans flag.
 	 * @param factory a bean factory used for resolving  ${...} placeholder
 	 * and #{...} SpEL expressions in default values, or {@code null} if default
 	 * values are not expected to contain expressions
 	 * @param registry for checking reactive type wrappers
-	 * @param useDefaultResolution in default resolution mode a method argument
+	 * @param useDefaultResolution in default resolution beans a method argument
 	 * that is a simple type, as defined in {@link BeanUtils#isSimpleProperty},
 	 * is treated as a request parameter even if it isn't annotated, the
 	 * request parameter name is derived from the method parameter name.

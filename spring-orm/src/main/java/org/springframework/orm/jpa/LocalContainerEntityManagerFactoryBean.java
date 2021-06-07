@@ -216,7 +216,7 @@ public class LocalContainerEntityManagerFactoryBean extends AbstractEntityManage
 	}
 
 	/**
-	 * Specify the JPA 2.0 shared cache mode for this persistence unit,
+	 * Specify the JPA 2.0 shared cache beans for this persistence unit,
 	 * overriding a value in {@code persistence.xml} if set.
 	 * <p><b>NOTE: Only applied if no external PersistenceUnitManager specified.</b>
 	 * @since 4.0
@@ -228,7 +228,7 @@ public class LocalContainerEntityManagerFactoryBean extends AbstractEntityManage
 	}
 
 	/**
-	 * Specify the JPA 2.0 validation mode for this persistence unit,
+	 * Specify the JPA 2.0 validation beans for this persistence unit,
 	 * overriding a value in {@code persistence.xml} if set.
 	 * <p><b>NOTE: Only applied if no external PersistenceUnitManager specified.</b>
 	 * @since 4.0

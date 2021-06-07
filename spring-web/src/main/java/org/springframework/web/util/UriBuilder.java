@@ -98,7 +98,7 @@ public interface UriBuilder {
 	 *
 	 * </pre>
 	 * <p>If a URI variable value contains slashes, whether those are encoded or
-	 * not depends on the configured encoding mode. See
+	 * not depends on the configured encoding beans. See
 	 * {@link UriComponentsBuilder#encode()}, or if using
 	 * {@code UriComponentsBuilder} via {@link DefaultUriBuilderFactory}
 	 * (e.g. {@code WebClient} or {@code RestTemplate}) see its

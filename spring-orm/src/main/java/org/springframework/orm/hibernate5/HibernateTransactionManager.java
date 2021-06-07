@@ -286,12 +286,12 @@ public class HibernateTransactionManager extends AbstractPlatformTransactionMana
 	 * Note that this requires {@link SessionFactory#getCurrentSession()}
 	 * to always return a proper Session when called for a Spring-managed transaction;
 	 * transaction begin will fail if the {@code getCurrentSession()} call fails.
-	 * <p>This mode will typically be used in combination with a custom Hibernate
+	 * <p>This beans will typically be used in combination with a custom Hibernate
 	 * {@link org.hibernate.context.spi.CurrentSessionContext} implementation that stores
 	 * Sessions in a place other than Spring's TransactionSynchronizationManager.
 	 * It may also be used in combination with Spring's Open-Session-in-View support
 	 * (using Spring's default {@link SpringSessionContext}), in which case it subtly
-	 * differs from the Spring-managed Session mode: The pre-bound Session will <i>not</i>
+	 * differs from the Spring-managed Session beans: The pre-bound Session will <i>not</i>
 	 * receive a {@code clear()} call (on rollback) or a {@code disconnect()}
 	 * call (on transaction completion) in such a scenario; this is rather left up
 	 * to a custom CurrentSessionContext implementation (if desired).
@@ -360,7 +360,7 @@ public class HibernateTransactionManager extends AbstractPlatformTransactionMana
 
 	/**
 	 * The bean factory just needs to be known for resolving entity interceptor
-	 * bean names. It does not need to be set for any other mode of operation.
+	 * bean names. It does not need to be set for any other beans of operation.
 	 * @see #setEntityInterceptorBeanName
 	 */
 	@Override
@@ -497,7 +497,7 @@ public class HibernateTransactionManager extends AbstractPlatformTransactionMana
 						throw new InvalidIsolationLevelException(
 								"HibernateTransactionManager is not allowed to support custom isolation levels: " +
 								"make sure that its 'prepareConnection' flag is on (the default) and that the " +
-								"Hibernate connection release mode is set to 'on_close' (the default for JDBC).");
+								"Hibernate connection release beans is set to 'on_close' (the default for JDBC).");
 					}
 					if (logger.isDebugEnabled()) {
 						logger.debug("Not preparing JDBC Connection of Hibernate Session [" + session + "]");
@@ -508,7 +508,7 @@ public class HibernateTransactionManager extends AbstractPlatformTransactionMana
 			if (definition.isReadOnly() && txObject.isNewSession()) {
 				// Just set to MANUAL in case of a new Session for this transaction.
 				session.setFlushMode(FlushMode.MANUAL);
-				// As of 5.1, we're also setting Hibernate's read-only entity mode by default.
+				// As of 5.1, we're also setting Hibernate's read-only entity beans by default.
 				session.setDefaultReadOnly(true);
 			}
 
@@ -704,7 +704,7 @@ public class HibernateTransactionManager extends AbstractPlatformTransactionMana
 
 		Session session = txObject.getSessionHolder().getSession();
 		if (this.prepareConnection && isPhysicallyConnected(session)) {
-			// We're running with connection release mode "on_close": We're able to reset
+			// We're running with connection release beans "on_close": We're able to reset
 			// the isolation level and/or read-only flag of the JDBC Connection here.
 			// Else, we need to rely on the connection pool to perform proper cleanup.
 			try {
@@ -760,7 +760,7 @@ public class HibernateTransactionManager extends AbstractPlatformTransactionMana
 	 * Return whether the given Hibernate Session will always hold the same
 	 * JDBC Connection. This is used to check whether the transaction manager
 	 * can safely prepare and clean up the JDBC Connection used for a transaction.
-	 * <p>The default implementation checks the Session's connection release mode
+	 * <p>The default implementation checks the Session's connection release beans
 	 * to be "on_close".
 	 * @param session the Hibernate Session to check
 	 * @see ConnectionReleaseMode#ON_CLOSE

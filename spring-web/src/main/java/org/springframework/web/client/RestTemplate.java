@@ -71,7 +71,7 @@ import org.springframework.web.util.UriTemplateHandler;
  * addition to the generalized {@code exchange} and {@code execute} methods that
  * support of less frequent cases.
  *
- * <p><strong>NOTE:</strong> As of 5.0 this class is in maintenance mode, with
+ * <p><strong>NOTE:</strong> As of 5.0 this class is in maintenance beans, with
  * only minor requests for changes and bugs to be accepted going forward. Please,
  * consider using the {@code org.springframework.web.reactive.client.WebClient}
  * which has a more modern API and supports sync, async, and streaming scenarios.
@@ -279,7 +279,7 @@ public class RestTemplate extends InterceptingHttpAccessor implements RestOperat
 	/**
 	 * Configure a strategy for expanding URI templates.
 	 * <p>By default, {@link DefaultUriBuilderFactory} is used and for
-	 * backwards compatibility, the encoding mode is set to
+	 * backwards compatibility, the encoding beans is set to
 	 * {@link EncodingMode#URI_COMPONENT URI_COMPONENT}. As of 5.0.8, prefer
 	 * using {@link EncodingMode#TEMPLATE_AND_VALUES TEMPLATE_AND_VALUES}.
 	 * <p><strong>Note:</strong> in 5.0 the switch from

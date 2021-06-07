@@ -17,7 +17,7 @@
 package org.springframework.dao;
 
 /**
- * Exception thrown on failure to complete a transaction in serialized mode
+ * Exception thrown on failure to complete a transaction in serialized beans
  * due to update conflicts.
  *
  * @author Rod Johnson

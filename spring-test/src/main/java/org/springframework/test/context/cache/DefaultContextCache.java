@@ -158,7 +158,7 @@ public class DefaultContextCache implements ContextCache {
 		Assert.notNull(key, "Key must not be null");
 
 		// startKey is the level at which to begin clearing the cache,
-		// depending on the configured hierarchy mode.s
+		// depending on the configured hierarchy beans.s
 		MergedContextConfiguration startKey = key;
 		if (hierarchyMode == HierarchyMode.EXHAUSTIVE) {
 			MergedContextConfiguration parent = startKey.getParent();

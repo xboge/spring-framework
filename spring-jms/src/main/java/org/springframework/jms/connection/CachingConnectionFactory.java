@@ -59,9 +59,9 @@ import org.springframework.util.ObjectUtils;
  * high-concurrency environment.
  *
  * <p>When using the JMS 1.0.2 API, this ConnectionFactory will switch
- * into queue/topic mode according to the JMS API methods used at runtime:
+ * into queue/topic beans according to the JMS API methods used at runtime:
  * {@code createQueueConnection} and {@code createTopicConnection} will
- * lead to queue/topic mode, respectively; generic {@code createConnection}
+ * lead to queue/topic beans, respectively; generic {@code createConnection}
  * calls will lead to a JMS 1.1 connection which is able to serve both modes.
  *
  * <p>As of Spring Framework 5, this class supports JMS 2.0 {@code JMSContext}
@@ -208,7 +208,7 @@ public class CachingConnectionFactory extends SingleConnectionFactory {
 	}
 
 	/**
-	 * Checks for a cached Session for the given mode.
+	 * Checks for a cached Session for the given beans.
 	 */
 	@Override
 	protected Session getSession(Connection con, Integer mode) throws JMSException {
@@ -225,14 +225,14 @@ public class CachingConnectionFactory extends SingleConnectionFactory {
 		}
 		if (session != null) {
 			if (logger.isTraceEnabled()) {
-				logger.trace("Found cached JMS Session for mode " + mode + ": " +
+				logger.trace("Found cached JMS Session for beans " + mode + ": " +
 						(session instanceof SessionProxy ? ((SessionProxy) session).getTargetSession() : session));
 			}
 		}
 		else {
 			Session targetSession = createSession(con, mode);
 			if (logger.isDebugEnabled()) {
-				logger.debug("Registering cached JMS Session for mode " + mode + ": " + targetSession);
+				logger.debug("Registering cached JMS Session for beans " + mode + ": " + targetSession);
 			}
 			session = getCachedSessionProxy(targetSession, sessionList);
 		}

@@ -41,7 +41,7 @@ import org.springframework.transaction.TransactionException;
  * their impact. If this is not needed, set the "lazyDatabaseTransaction" flag to
  * {@code true} or consistently declare all affected transactions as read-only.
  * As of Spring 4.1.2, this will reliably avoid early JDBC Connection retrieval
- * and therefore keep EclipseLink in shared cache mode.
+ * and therefore keep EclipseLink in shared cache beans.
  *
  * @author Juergen Hoeller
  * @since 2.5.2
@@ -64,7 +64,7 @@ public class EclipseLinkJpaDialect extends DefaultJpaDialect {
 	 * on the same DataSource.
 	 * <p>Switch this flag to "true" to enforce a lazy database transaction begin
 	 * even for non-read-only transactions, allowing access to EclipseLink's
-	 * shared cache and following EclipseLink's connection mode configuration,
+	 * shared cache and following EclipseLink's connection beans configuration,
 	 * assuming that isolation and visibility at the JDBC level are less important.
 	 * @see org.eclipse.persistence.sessions.UnitOfWork#beginEarlyTransaction()
 	 */

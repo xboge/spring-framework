@@ -56,8 +56,8 @@ public interface JpaDialect extends PersistenceExceptionTranslator {
 	 * <p>An implementation can configure the JPA Transaction object and then
 	 * invoke {@code begin}, or invoke a special begin method that takes,
 	 * for example, an isolation level.
-	 * <p>An implementation can apply the read-only flag as flush mode. In that case,
-	 * a transaction data object can be returned that holds the previous flush mode
+	 * <p>An implementation can apply the read-only flag as flush beans. In that case,
+	 * a transaction data object can be returned that holds the previous flush beans
 	 * (and possibly other data), to be reset in {@code cleanupTransaction}.
 	 * It may also apply the read-only flag and isolation level to the underlying
 	 * JDBC Connection before beginning the transaction.
@@ -89,8 +89,8 @@ public interface JpaDialect extends PersistenceExceptionTranslator {
 	 * EntityManagerFactoryUtils when enlisting an EntityManager in a JTA transaction
 	 * or a locally joined transaction (e.g. after upgrading an unsynchronized
 	 * EntityManager to a synchronized one).
-	 * <p>An implementation can apply the read-only flag as flush mode. In that case,
-	 * a transaction data object can be returned that holds the previous flush mode
+	 * <p>An implementation can apply the read-only flag as flush beans. In that case,
+	 * a transaction data object can be returned that holds the previous flush beans
 	 * (and possibly other data), to be reset in {@code cleanupTransaction}.
 	 * <p>Implementations can also use the Spring transaction name to optimize for
 	 * specific data access use cases (effectively using the current transaction

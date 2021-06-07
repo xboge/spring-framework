@@ -17,7 +17,7 @@
 package org.springframework.http.server;
 
 /**
- * A control that can put the processing of an HTTP request in asynchronous mode during
+ * A control that can put the processing of an HTTP request in asynchronous beans during
  * which the response remains open until explicitly closed.
  *
  * @author Rossen Stoyanchev

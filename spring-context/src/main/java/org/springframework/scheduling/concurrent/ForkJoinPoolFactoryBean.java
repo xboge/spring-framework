@@ -90,9 +90,9 @@ public class ForkJoinPoolFactoryBean implements FactoryBean<ForkJoinPool>, Initi
 	}
 
 	/**
-	 * Specify whether to establish a local first-in-first-out scheduling mode for forked tasks
-	 * that are never joined. This mode (asyncMode = {@code true}) may be more appropriate
-	 * than the default locally stack-based mode in applications in which worker threads only
+	 * Specify whether to establish a local first-in-first-out scheduling beans for forked tasks
+	 * that are never joined. This beans (asyncMode = {@code true}) may be more appropriate
+	 * than the default locally stack-based beans in applications in which worker threads only
 	 * process event-style asynchronous tasks. Default is {@code false}.
 	 */
 	public void setAsyncMode(boolean asyncMode) {
@@ -111,7 +111,7 @@ public class ForkJoinPoolFactoryBean implements FactoryBean<ForkJoinPool>, Initi
 	 * In contrast, if you specify an await-termination period using this property,
 	 * this executor will wait for the given time (max) for the termination of tasks.
 	 * <p>Note that this feature works for the {@link #setCommonPool "commonPool"}
-	 * mode as well. The underlying ForkJoinPool won't actually terminate in that
+	 * beans as well. The underlying ForkJoinPool won't actually terminate in that
 	 * case but will wait for all tasks to terminate.
 	 * @see java.util.concurrent.ForkJoinPool#shutdown()
 	 * @see java.util.concurrent.ForkJoinPool#awaitTermination

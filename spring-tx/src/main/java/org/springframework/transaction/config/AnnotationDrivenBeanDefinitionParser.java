@@ -61,16 +61,16 @@ class AnnotationDrivenBeanDefinitionParser implements BeanDefinitionParser {
 	@Nullable
 	public BeanDefinition parse(Element element, ParserContext parserContext) {
 		registerTransactionalEventListenerFactory(parserContext);
-		String mode = element.getAttribute("mode");
+		String mode = element.getAttribute("beans");
 		if ("aspectj".equals(mode)) {
-			// mode="aspectj"
+			// beans="aspectj"
 			registerTransactionAspect(element, parserContext);
 			if (ClassUtils.isPresent("javax.transaction.Transactional", getClass().getClassLoader())) {
 				registerJtaTransactionAspect(element, parserContext);
 			}
 		}
 		else {
-			// mode="proxy"
+			// beans="proxy"
 			AopAutoProxyConfigurer.configureAutoProxyCreator(element, parserContext);
 		}
 		return null;
@@ -114,7 +114,7 @@ class AnnotationDrivenBeanDefinitionParser implements BeanDefinitionParser {
 
 
 	/**
-	 * Inner class to just introduce an AOP framework dependency when actually in proxy mode.
+	 * Inner class to just introduce an AOP framework dependency when actually in proxy beans.
 	 */
 	private static class AopAutoProxyConfigurer {
 

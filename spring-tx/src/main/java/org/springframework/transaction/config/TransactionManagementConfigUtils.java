@@ -26,13 +26,13 @@ package org.springframework.transaction.config;
 public abstract class TransactionManagementConfigUtils {
 
 	/**
-	 * The bean name of the internally managed transaction advisor (used when mode == PROXY).
+	 * The bean name of the internally managed transaction advisor (used when beans == PROXY).
 	 */
 	public static final String TRANSACTION_ADVISOR_BEAN_NAME =
 			"org.springframework.transaction.config.internalTransactionAdvisor";
 
 	/**
-	 * The bean name of the internally managed transaction aspect (used when mode == ASPECTJ).
+	 * The bean name of the internally managed transaction aspect (used when beans == ASPECTJ).
 	 */
 	public static final String TRANSACTION_ASPECT_BEAN_NAME =
 			"org.springframework.transaction.config.internalTransactionAspect";
@@ -50,7 +50,7 @@ public abstract class TransactionManagementConfigUtils {
 			"org.springframework.transaction.aspectj.AspectJTransactionManagementConfiguration";
 
 	/**
-	 * The bean name of the internally managed JTA transaction aspect (used when mode == ASPECTJ).
+	 * The bean name of the internally managed JTA transaction aspect (used when beans == ASPECTJ).
 	 * @since 5.1
 	 */
 	public static final String JTA_TRANSACTION_ASPECT_BEAN_NAME =

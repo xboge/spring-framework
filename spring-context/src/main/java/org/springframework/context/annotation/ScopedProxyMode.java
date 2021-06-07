@@ -37,7 +37,7 @@ public enum ScopedProxyMode {
 
 	/**
 	 * Do not create a scoped proxy.
-	 * <p>This proxy-mode is not typically useful when used with a
+	 * <p>This proxy-beans is not typically useful when used with a
 	 * non-singleton scoped instance, which should favor the use of the
 	 * {@link #INTERFACES} or {@link #TARGET_CLASS} proxy-modes instead if it
 	 * is to be used as a dependency.

@@ -34,9 +34,9 @@ import static org.springframework.test.annotation.DirtiesContext.MethodMode.BEFO
  * {@link DirtiesContext @DirtiesContext} annotation.
  *
  * <p>This listener supports test methods with the
- * {@linkplain DirtiesContext#methodMode method mode} set to
+ * {@linkplain DirtiesContext#methodMode method beans} set to
  * {@link MethodMode#BEFORE_METHOD BEFORE_METHOD} and test classes with the
- * {@linkplain DirtiesContext#classMode() class mode} set to
+ * {@linkplain DirtiesContext#classMode() class beans} set to
  * {@link ClassMode#BEFORE_EACH_TEST_METHOD BEFORE_EACH_TEST_METHOD} or
  * {@link ClassMode#BEFORE_CLASS BEFORE_CLASS}. For support for <em>AFTER</em>
  * modes, see {@link DirtiesContextTestExecutionListener}.
@@ -65,7 +65,7 @@ public class DirtiesContextBeforeModesTestExecutionListener extends AbstractDirt
 	/**
 	 * If the test class of the supplied {@linkplain TestContext test context}
 	 * is annotated with {@code @DirtiesContext} and the {@linkplain
-	 * DirtiesContext#classMode() class mode} is set to {@link
+	 * DirtiesContext#classMode() class beans} is set to {@link
 	 * ClassMode#BEFORE_CLASS BEFORE_CLASS}, the {@linkplain ApplicationContext
 	 * application context} of the test context will be
 	 * {@linkplain TestContext#markApplicationContextDirty marked as dirty}, and the
@@ -81,10 +81,10 @@ public class DirtiesContextBeforeModesTestExecutionListener extends AbstractDirt
 	/**
 	 * If the current test method of the supplied {@linkplain TestContext test
 	 * context} is annotated with {@code @DirtiesContext} and the {@linkplain
-	 * DirtiesContext#methodMode() method mode} is set to {@link
+	 * DirtiesContext#methodMode() method beans} is set to {@link
 	 * MethodMode#BEFORE_METHOD BEFORE_METHOD}, or if the test class is
 	 * annotated with {@code @DirtiesContext} and the {@linkplain
-	 * DirtiesContext#classMode() class mode} is set to {@link
+	 * DirtiesContext#classMode() class beans} is set to {@link
 	 * ClassMode#BEFORE_EACH_TEST_METHOD BEFORE_EACH_TEST_METHOD}, the
 	 * {@linkplain ApplicationContext application context} of the test context
 	 * will be {@linkplain TestContext#markApplicationContextDirty marked as dirty} and the

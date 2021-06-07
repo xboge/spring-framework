@@ -115,14 +115,14 @@ public interface HibernateOperations {
 	/**
 	 * Return the persistent instance of the given entity class
 	 * with the given identifier, or {@code null} if not found.
-	 * <p>Obtains the specified lock mode if the instance exists.
+	 * <p>Obtains the specified lock beans if the instance exists.
 	 * <p>This method is a thin wrapper around
 	 * {@link org.hibernate.Session#get(Class, Serializable, LockMode)} for convenience.
 	 * For an explanation of the exact semantics of this method, please do refer to
 	 * the Hibernate API documentation in the first instance.
 	 * @param entityClass a persistent class
 	 * @param id the identifier of the persistent instance
-	 * @param lockMode the lock mode to obtain
+	 * @param lockMode the lock beans to obtain
 	 * @return the persistent instance, or {@code null} if not found
 	 * @throws DataAccessException in case of Hibernate errors
 	 * @see org.hibernate.Session#get(Class, Serializable, LockMode)
@@ -149,14 +149,14 @@ public interface HibernateOperations {
 	/**
 	 * Return the persistent instance of the given entity class
 	 * with the given identifier, or {@code null} if not found.
-	 * Obtains the specified lock mode if the instance exists.
+	 * Obtains the specified lock beans if the instance exists.
 	 * <p>This method is a thin wrapper around
 	 * {@link org.hibernate.Session#get(String, Serializable, LockMode)} for convenience.
 	 * For an explanation of the exact semantics of this method, please do refer to
 	 * the Hibernate API documentation in the first instance.
 	 * @param entityName the name of the persistent entity
 	 * @param id the identifier of the persistent instance
-	 * @param lockMode the lock mode to obtain
+	 * @param lockMode the lock beans to obtain
 	 * @return the persistent instance, or {@code null} if not found
 	 * @throws DataAccessException in case of Hibernate errors
 	 * @see org.hibernate.Session#get(Class, Serializable, LockMode)
@@ -183,14 +183,14 @@ public interface HibernateOperations {
 	/**
 	 * Return the persistent instance of the given entity class
 	 * with the given identifier, throwing an exception if not found.
-	 * Obtains the specified lock mode if the instance exists.
+	 * Obtains the specified lock beans if the instance exists.
 	 * <p>This method is a thin wrapper around
 	 * {@link org.hibernate.Session#load(Class, Serializable, LockMode)} for convenience.
 	 * For an explanation of the exact semantics of this method, please do refer to
 	 * the Hibernate API documentation in the first instance.
 	 * @param entityClass a persistent class
 	 * @param id the identifier of the persistent instance
-	 * @param lockMode the lock mode to obtain
+	 * @param lockMode the lock beans to obtain
 	 * @return the persistent instance
 	 * @throws org.springframework.orm.ObjectRetrievalFailureException if not found
 	 * @throws DataAccessException in case of Hibernate errors
@@ -217,14 +217,14 @@ public interface HibernateOperations {
 	/**
 	 * Return the persistent instance of the given entity class
 	 * with the given identifier, throwing an exception if not found.
-	 * <p>Obtains the specified lock mode if the instance exists.
+	 * <p>Obtains the specified lock beans if the instance exists.
 	 * <p>This method is a thin wrapper around
 	 * {@link org.hibernate.Session#load(String, Serializable, LockMode)} for convenience.
 	 * For an explanation of the exact semantics of this method, please do refer to
 	 * the Hibernate API documentation in the first instance.
 	 * @param entityName the name of the persistent entity
 	 * @param id the identifier of the persistent instance
-	 * @param lockMode the lock mode to obtain
+	 * @param lockMode the lock beans to obtain
 	 * @return the persistent instance
 	 * @throws org.springframework.orm.ObjectRetrievalFailureException if not found
 	 * @throws DataAccessException in case of Hibernate errors
@@ -267,9 +267,9 @@ public interface HibernateOperations {
 
 	/**
 	 * Re-read the state of the given persistent instance.
-	 * Obtains the specified lock mode for the instance.
+	 * Obtains the specified lock beans for the instance.
 	 * @param entity the persistent instance to re-read
-	 * @param lockMode the lock mode to obtain
+	 * @param lockMode the lock beans to obtain
 	 * @throws DataAccessException in case of Hibernate errors
 	 * @see org.hibernate.Session#refresh(Object, LockMode)
 	 */
@@ -321,7 +321,7 @@ public interface HibernateOperations {
 	 * Obtain the specified lock level upon the given object, implicitly
 	 * checking whether the corresponding database entry still exists.
 	 * @param entity the persistent instance to lock
-	 * @param lockMode the lock mode to obtain
+	 * @param lockMode the lock beans to obtain
 	 * @throws org.springframework.orm.ObjectOptimisticLockingFailureException if not found
 	 * @throws DataAccessException in case of Hibernate errors
 	 * @see org.hibernate.Session#lock(Object, LockMode)
@@ -333,7 +333,7 @@ public interface HibernateOperations {
 	 * checking whether the corresponding database entry still exists.
 	 * @param entityName the name of the persistent entity
 	 * @param entity the persistent instance to lock
-	 * @param lockMode the lock mode to obtain
+	 * @param lockMode the lock beans to obtain
 	 * @throws org.springframework.orm.ObjectOptimisticLockingFailureException if not found
 	 * @throws DataAccessException in case of Hibernate errors
 	 * @see org.hibernate.Session#lock(String, Object, LockMode)
@@ -371,10 +371,10 @@ public interface HibernateOperations {
 	/**
 	 * Update the given persistent instance,
 	 * associating it with the current Hibernate {@link org.hibernate.Session}.
-	 * <p>Obtains the specified lock mode if the instance exists, implicitly
+	 * <p>Obtains the specified lock beans if the instance exists, implicitly
 	 * checking whether the corresponding database entry still exists.
 	 * @param entity the persistent instance to update
-	 * @param lockMode the lock mode to obtain
+	 * @param lockMode the lock beans to obtain
 	 * @throws org.springframework.orm.ObjectOptimisticLockingFailureException if not found
 	 * @throws DataAccessException in case of Hibernate errors
 	 * @see org.hibernate.Session#update(Object)
@@ -394,11 +394,11 @@ public interface HibernateOperations {
 	/**
 	 * Update the given persistent instance,
 	 * associating it with the current Hibernate {@link org.hibernate.Session}.
-	 * <p>Obtains the specified lock mode if the instance exists, implicitly
+	 * <p>Obtains the specified lock beans if the instance exists, implicitly
 	 * checking whether the corresponding database entry still exists.
 	 * @param entityName the name of the persistent entity
 	 * @param entity the persistent instance to update
-	 * @param lockMode the lock mode to obtain
+	 * @param lockMode the lock beans to obtain
 	 * @throws org.springframework.orm.ObjectOptimisticLockingFailureException if not found
 	 * @throws DataAccessException in case of Hibernate errors
 	 * @see org.hibernate.Session#update(String, Object)
@@ -430,7 +430,7 @@ public interface HibernateOperations {
 
 	/**
 	 * Persist the state of the given detached instance according to the
-	 * given replication mode, reusing the current identifier value.
+	 * given replication beans, reusing the current identifier value.
 	 * @param entity the persistent object to replicate
 	 * @param replicationMode the Hibernate ReplicationMode
 	 * @throws DataAccessException in case of Hibernate errors
@@ -440,7 +440,7 @@ public interface HibernateOperations {
 
 	/**
 	 * Persist the state of the given detached instance according to the
-	 * given replication mode, reusing the current identifier value.
+	 * given replication beans, reusing the current identifier value.
 	 * @param entityName the name of the persistent entity
 	 * @param entity the persistent object to replicate
 	 * @param replicationMode the Hibernate ReplicationMode
@@ -521,10 +521,10 @@ public interface HibernateOperations {
 
 	/**
 	 * Delete the given persistent instance.
-	 * <p>Obtains the specified lock mode if the instance exists, implicitly
+	 * <p>Obtains the specified lock beans if the instance exists, implicitly
 	 * checking whether the corresponding database entry still exists.
 	 * @param entity the persistent instance to delete
-	 * @param lockMode the lock mode to obtain
+	 * @param lockMode the lock beans to obtain
 	 * @throws org.springframework.orm.ObjectOptimisticLockingFailureException if not found
 	 * @throws DataAccessException in case of Hibernate errors
 	 * @see org.hibernate.Session#delete(Object)
@@ -542,11 +542,11 @@ public interface HibernateOperations {
 
 	/**
 	 * Delete the given persistent instance.
-	 * <p>Obtains the specified lock mode if the instance exists, implicitly
+	 * <p>Obtains the specified lock beans if the instance exists, implicitly
 	 * checking whether the corresponding database entry still exists.
 	 * @param entityName the name of the persistent entity
 	 * @param entity the persistent instance to delete
-	 * @param lockMode the lock mode to obtain
+	 * @param lockMode the lock beans to obtain
 	 * @throws org.springframework.orm.ObjectOptimisticLockingFailureException if not found
 	 * @throws DataAccessException in case of Hibernate errors
 	 * @see org.hibernate.Session#delete(Object)

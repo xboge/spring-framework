@@ -84,7 +84,7 @@ public @interface DateTimeFormat {
 	 * (e.g. rejecting a Feb 29 value for a non-leap-year). As a consequence, 'yy'
 	 * characters indicate a year in the traditional style, not a "year-of-era" as in the
 	 * {@link java.time.format.DateTimeFormatter} specification (i.e. 'yy' turns into 'uu'
-	 * when going through that {@code DateTimeFormatter} with strict resolution mode).
+	 * when going through that {@code DateTimeFormatter} with strict resolution beans).
 	 */
 	String pattern() default "";
 

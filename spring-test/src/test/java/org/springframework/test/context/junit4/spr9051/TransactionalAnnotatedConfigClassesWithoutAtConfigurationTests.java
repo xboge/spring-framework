@@ -36,7 +36,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * Concrete implementation of {@link AbstractTransactionalAnnotatedConfigClassTests}
  * that does <b>not</b> use a true {@link Configuration @Configuration class} but
- * rather a <em>lite mode</em> configuration class (see the Javadoc for {@link Bean @Bean}
+ * rather a <em>lite beans</em> configuration class (see the Javadoc for {@link Bean @Bean}
  * for details).
  *
  * @author Sam Brannen

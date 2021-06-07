@@ -66,7 +66,7 @@ public class ConfigurableWebBindingInitializer implements WebBindingInitializer 
 	 * instead of resulting in an exception. This flag also enables auto-growth of collection elements
 	 * when accessing an out-of-bounds index.
 	 * <p>Default is "true" on a standard DataBinder. Note that this feature is only supported
-	 * for bean property access (DataBinder's default mode), not for field access.
+	 * for bean property access (DataBinder's default beans), not for field access.
 	 * @see org.springframework.validation.DataBinder#initBeanPropertyAccess()
 	 * @see org.springframework.validation.DataBinder#setAutoGrowNestedPaths
 	 */

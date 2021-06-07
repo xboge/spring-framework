@@ -46,21 +46,21 @@ import java.lang.annotation.Target;
  * <h3>Supported Test Phases</h3>
  * <ul>
  * <li><strong>Before current test class</strong>: when declared at the class
- * level with class mode set to {@link ClassMode#BEFORE_CLASS BEFORE_CLASS}</li>
+ * level with class beans set to {@link ClassMode#BEFORE_CLASS BEFORE_CLASS}</li>
  * <li><strong>Before each test method in current test class</strong>: when
- * declared at the class level with class mode set to
+ * declared at the class level with class beans set to
  * {@link ClassMode#BEFORE_EACH_TEST_METHOD BEFORE_EACH_TEST_METHOD}</li>
  * <li><strong>Before current test method</strong>: when declared at the
- * method level with method mode set to
+ * method level with method beans set to
  * {@link MethodMode#BEFORE_METHOD BEFORE_METHOD}</li>
  * <li><strong>After current test method</strong>: when declared at the
- * method level with method mode set to
+ * method level with method beans set to
  * {@link MethodMode#AFTER_METHOD AFTER_METHOD}</li>
  * <li><strong>After each test method in current test class</strong>: when
- * declared at the class level with class mode set to
+ * declared at the class level with class beans set to
  * {@link ClassMode#AFTER_EACH_TEST_METHOD AFTER_EACH_TEST_METHOD}</li>
  * <li><strong>After current test class</strong>: when declared at the
- * class level with class mode set to
+ * class level with class beans set to
  * {@link ClassMode#AFTER_CLASS AFTER_CLASS}</li>
  * </ul>
  *
@@ -83,27 +83,27 @@ import java.lang.annotation.Target;
 public @interface DirtiesContext {
 
 	/**
-	 * The <i>mode</i> to use when a test method is annotated with
+	 * The <i>beans</i> to use when a test method is annotated with
 	 * {@code @DirtiesContext}.
 	 * <p>Defaults to {@link MethodMode#AFTER_METHOD AFTER_METHOD}.
-	 * <p>Setting the method mode on an annotated test class has no meaning.
+	 * <p>Setting the method beans on an annotated test class has no meaning.
 	 * For class-level control, use {@link #classMode} instead.
 	 * @since 4.2
 	 */
 	MethodMode methodMode() default MethodMode.AFTER_METHOD;
 
 	/**
-	 * The <i>mode</i> to use when a test class is annotated with
+	 * The <i>beans</i> to use when a test class is annotated with
 	 * {@code @DirtiesContext}.
 	 * <p>Defaults to {@link ClassMode#AFTER_CLASS AFTER_CLASS}.
-	 * <p>Setting the class mode on an annotated test method has no meaning.
+	 * <p>Setting the class beans on an annotated test method has no meaning.
 	 * For method-level control, use {@link #methodMode} instead.
 	 * @since 3.0
 	 */
 	ClassMode classMode() default ClassMode.AFTER_CLASS;
 
 	/**
-	 * The context cache clearing <em>mode</em> to use when a context is
+	 * The context cache clearing <em>beans</em> to use when a context is
 	 * configured as part of a hierarchy via
 	 * {@link org.springframework.test.context.ContextHierarchy @ContextHierarchy}.
 	 * <p>Defaults to {@link HierarchyMode#EXHAUSTIVE EXHAUSTIVE}.

@@ -63,7 +63,7 @@ public class ServerSentEventHttpMessageWriter implements HttpMessageWriter<Objec
 
 
 	/**
-	 * Constructor without an {@code Encoder}. In this mode only {@code String}
+	 * Constructor without an {@code Encoder}. In this beans only {@code String}
 	 * is supported for event data to be encoded.
 	 */
 	public ServerSentEventHttpMessageWriter() {

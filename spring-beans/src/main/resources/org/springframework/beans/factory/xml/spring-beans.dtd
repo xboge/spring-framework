@@ -156,7 +156,7 @@
 	method are specified, they will override the corresponding parent settings.
 
 	The remaining settings will always be taken from the child definition:
-	depends on, autowire mode, dependency check, scope, lazy init.
+	depends on, autowire beans, dependency check, scope, lazy init.
 -->
 <!ATTLIST bean parent CDATA #IMPLIED>
 

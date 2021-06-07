@@ -170,8 +170,8 @@ public class TilesConfigurer implements ServletContextAware, InitializingBean, D
 	/**
 	 * Specify whether to apply Tiles 3.0's "complete-autoload" configuration.
 	 * <p>See {@link org.apache.tiles.extras.complete.CompleteAutoloadTilesContainerFactory}
-	 * for details on the complete-autoload mode.
-	 * <p><b>NOTE: Specifying the complete-autoload mode effectively disables all other bean
+	 * for details on the complete-autoload beans.
+	 * <p><b>NOTE: Specifying the complete-autoload beans effectively disables all other bean
 	 * properties on this configurer.</b> The entire initialization procedure is then left
 	 * to {@link org.apache.tiles.extras.complete.CompleteAutoloadTilesInitializer}.
 	 * @see org.apache.tiles.extras.complete.CompleteAutoloadTilesContainerFactory

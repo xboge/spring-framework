@@ -84,7 +84,7 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
 	public static final int VALIDATION_NONE = XmlValidationModeDetector.VALIDATION_NONE;
 
 	/**
-	 * Indicates that the validation mode should be detected automatically.
+	 * Indicates that the validation beans should be detected automatically.
 	 */
 	public static final int VALIDATION_AUTO = XmlValidationModeDetector.VALIDATION_AUTO;
 
@@ -159,7 +159,7 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
 	}
 
 	/**
-	 * Set the validation mode to use by name. Defaults to {@link #VALIDATION_AUTO}.
+	 * Set the validation beans to use by name. Defaults to {@link #VALIDATION_AUTO}.
 	 * @see #setValidationMode
 	 */
 	public void setValidationModeName(String validationModeName) {
@@ -167,7 +167,7 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
 	}
 
 	/**
-	 * Set the validation mode to use. Defaults to {@link #VALIDATION_AUTO}.
+	 * Set the validation beans to use. Defaults to {@link #VALIDATION_AUTO}.
 	 * <p>Note that this only activates or deactivates validation itself.
 	 * If you are switching validation off for schema files, you might need to
 	 * activate schema namespace support explicitly: see {@link #setNamespaceAware}.
@@ -177,7 +177,7 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
 	}
 
 	/**
-	 * Return the validation mode to use.
+	 * Return the validation beans to use.
 	 */
 	public int getValidationMode() {
 		return this.validationMode;
@@ -434,11 +434,11 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
 	}
 
 	/**
-	 * Determine the validation mode for the specified {@link Resource}.
-	 * If no explicit validation mode has been configured, then the validation
-	 * mode gets {@link #detectValidationMode detected} from the given resource.
+	 * Determine the validation beans for the specified {@link Resource}.
+	 * If no explicit validation beans has been configured, then the validation
+	 * beans gets {@link #detectValidationMode detected} from the given resource.
 	 * <p>Override this method if you would like full control over the validation
-	 * mode, even when something other than {@link #VALIDATION_AUTO} was set.
+	 * beans, even when something other than {@link #VALIDATION_AUTO} was set.
 	 * @see #detectValidationMode
 	 */
 	protected int getValidationModeForResource(Resource resource) {
@@ -461,13 +461,13 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
 	 * by the supplied {@link Resource}. If the file has a {@code DOCTYPE}
 	 * definition then DTD validation is used otherwise XSD validation is assumed.
 	 * <p>Override this method if you would like to customize resolution
-	 * of the {@link #VALIDATION_AUTO} mode.
+	 * of the {@link #VALIDATION_AUTO} beans.
 	 */
 	protected int detectValidationMode(Resource resource) {
 		if (resource.isOpen()) {
 			throw new BeanDefinitionStoreException(
 					"Passed-in Resource [" + resource + "] contains an open stream: " +
-					"cannot determine validation mode automatically. Either pass in a Resource " +
+					"cannot determine validation beans automatically. Either pass in a Resource " +
 					"that is able to create fresh streams, or explicitly specify the validationMode " +
 					"on your XmlBeanDefinitionReader instance.");
 		}
@@ -478,7 +478,7 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
 		}
 		catch (IOException ex) {
 			throw new BeanDefinitionStoreException(
-					"Unable to determine validation mode for [" + resource + "]: cannot open InputStream. " +
+					"Unable to determine validation beans for [" + resource + "]: cannot open InputStream. " +
 					"Did you attempt to load directly from a SAX InputSource without specifying the " +
 					"validationMode on your XmlBeanDefinitionReader instance?", ex);
 		}
@@ -487,7 +487,7 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
 			return this.validationModeDetector.detectValidationMode(inputStream);
 		}
 		catch (IOException ex) {
-			throw new BeanDefinitionStoreException("Unable to determine validation mode for [" +
+			throw new BeanDefinitionStoreException("Unable to determine validation beans for [" +
 					resource + "]: an error occurred whilst reading from the InputStream.", ex);
 		}
 	}

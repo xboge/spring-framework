@@ -81,13 +81,13 @@ class AnnotationDrivenCacheBeanDefinitionParser implements BeanDefinitionParser 
 	@Override
 	@Nullable
 	public BeanDefinition parse(Element element, ParserContext parserContext) {
-		String mode = element.getAttribute("mode");
+		String mode = element.getAttribute("beans");
 		if ("aspectj".equals(mode)) {
-			// mode="aspectj"
+			// beans="aspectj"
 			registerCacheAspect(element, parserContext);
 		}
 		else {
-			// mode="proxy"
+			// beans="proxy"
 			registerCacheAdvisor(element, parserContext);
 		}
 

@@ -30,7 +30,7 @@ import org.springframework.util.ObjectUtils;
  * to add new values. If init method, destroy method and/or static factory
  * method are specified, they will override the corresponding parent settings.
  * The remaining settings will <i>always</i> be taken from the child definition:
- * depends on, autowire mode, dependency check, singleton, lazy init.
+ * depends on, autowire beans, dependency check, singleton, lazy init.
  *
  * <p><b>NOTE:</b> Since Spring 2.5, the preferred way to register bean
  * definitions programmatically is the {@link GenericBeanDefinition} class,

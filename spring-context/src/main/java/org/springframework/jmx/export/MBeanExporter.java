@@ -104,23 +104,23 @@ public class MBeanExporter extends MBeanRegistrationSupport implements MBeanExpo
 		BeanClassLoaderAware, BeanFactoryAware, InitializingBean, SmartInitializingSingleton, DisposableBean {
 
 	/**
-	 * Autodetection mode indicating that no autodetection should be used.
+	 * Autodetection beans indicating that no autodetection should be used.
 	 */
 	public static final int AUTODETECT_NONE = 0;
 
 	/**
-	 * Autodetection mode indicating that only valid MBeans should be autodetected.
+	 * Autodetection beans indicating that only valid MBeans should be autodetected.
 	 */
 	public static final int AUTODETECT_MBEAN = 1;
 
 	/**
-	 * Autodetection mode indicating that only the {@link MBeanInfoAssembler} should be able
+	 * Autodetection beans indicating that only the {@link MBeanInfoAssembler} should be able
 	 * to autodetect beans.
 	 */
 	public static final int AUTODETECT_ASSEMBLER = 2;
 
 	/**
-	 * Autodetection mode indicating that all autodetection mechanisms should be used.
+	 * Autodetection beans indicating that all autodetection mechanisms should be used.
 	 */
 	public static final int AUTODETECT_ALL = AUTODETECT_MBEAN | AUTODETECT_ASSEMBLER;
 
@@ -145,7 +145,7 @@ public class MBeanExporter extends MBeanRegistrationSupport implements MBeanExpo
 	@Nullable
 	private Map<String, Object> beans;
 
-	/** The autodetect mode to use for this MBeanExporter. */
+	/** The autodetect beans to use for this MBeanExporter. */
 	@Nullable
 	private Integer autodetectMode;
 
@@ -223,7 +223,7 @@ public class MBeanExporter extends MBeanRegistrationSupport implements MBeanExpo
 	}
 
 	/**
-	 * Set the autodetection mode to use.
+	 * Set the autodetection beans to use.
 	 * @throws IllegalArgumentException if the supplied value is not
 	 * one of the {@code AUTODETECT_} constants
 	 * @see #setAutodetectModeName(String)
@@ -240,7 +240,7 @@ public class MBeanExporter extends MBeanRegistrationSupport implements MBeanExpo
 	}
 
 	/**
-	 * Set the autodetection mode to use by name.
+	 * Set the autodetection beans to use by name.
 	 * @throws IllegalArgumentException if the supplied value is not resolvable
 	 * to one of the {@code AUTODETECT_} constants or is {@code null}
 	 * @see #setAutodetectMode(int)

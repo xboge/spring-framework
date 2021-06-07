@@ -28,7 +28,7 @@ import org.springframework.core.type.AnnotationMetadata;
 
 /**
  * Registers an auto proxy creator against the current {@link BeanDefinitionRegistry}
- * as appropriate based on an {@code @Enable*} annotation having {@code mode} and
+ * as appropriate based on an {@code @Enable*} annotation having {@code beans} and
  * {@code proxyTargetClass} attributes set to the correct values.
  *
  * @author Chris Beams
@@ -43,15 +43,15 @@ public class AutoProxyRegistrar implements ImportBeanDefinitionRegistrar {
 	/**
 	 * Register, escalate, and configure the standard auto proxy creator (APC) against the
 	 * given registry. Works by finding the nearest annotation declared on the importing
-	 * {@code @Configuration} class that has both {@code mode} and {@code proxyTargetClass}
-	 * attributes. If {@code mode} is set to {@code PROXY}, the APC is registered; if
+	 * {@code @Configuration} class that has both {@code beans} and {@code proxyTargetClass}
+	 * attributes. If {@code beans} is set to {@code PROXY}, the APC is registered; if
 	 * {@code proxyTargetClass} is set to {@code true}, then the APC is forced to use
 	 * subclass (CGLIB) proxying.
-	 * <p>Several {@code @Enable*} annotations expose both {@code mode} and
+	 * <p>Several {@code @Enable*} annotations expose both {@code beans} and
 	 * {@code proxyTargetClass} attributes. It is important to note that most of these
 	 * capabilities end up sharing a {@linkplain AopConfigUtils#AUTO_PROXY_CREATOR_BEAN_NAME
 	 * single APC}. For this reason, this implementation doesn't "care" exactly which
-	 * annotation it finds -- as long as it exposes the right {@code mode} and
+	 * annotation it finds -- as long as it exposes the right {@code beans} and
 	 * {@code proxyTargetClass} attributes, the APC can be registered and configured all
 	 * the same.
 	 */
@@ -64,7 +64,7 @@ public class AutoProxyRegistrar implements ImportBeanDefinitionRegistrar {
 			if (candidate == null) {
 				continue;
 			}
-			Object mode = candidate.get("mode");
+			Object mode = candidate.get("beans");
 			Object proxyTargetClass = candidate.get("proxyTargetClass");
 			if (mode != null && proxyTargetClass != null && AdviceMode.class == mode.getClass() &&
 					Boolean.class == proxyTargetClass.getClass()) {
@@ -81,7 +81,7 @@ public class AutoProxyRegistrar implements ImportBeanDefinitionRegistrar {
 		if (!candidateFound && logger.isInfoEnabled()) {
 			String name = getClass().getSimpleName();
 			logger.info(String.format("%s was imported but no annotations were found " +
-					"having both 'mode' and 'proxyTargetClass' attributes of type " +
+					"having both 'beans' and 'proxyTargetClass' attributes of type " +
 					"AdviceMode and boolean respectively. This means that auto proxy " +
 					"creator registration and configuration may not have occurred as " +
 					"intended, and components may not be proxied as expected. Check to " +

@@ -33,7 +33,7 @@ import org.springframework.util.StringUtils;
  */
 class PropertyPlaceholderBeanDefinitionParser extends AbstractPropertyLoadingBeanDefinitionParser {
 
-	private static final String SYSTEM_PROPERTIES_MODE_ATTRIBUTE = "system-properties-mode";
+	private static final String SYSTEM_PROPERTIES_MODE_ATTRIBUTE = "system-properties-beans";
 
 	private static final String SYSTEM_PROPERTIES_MODE_DEFAULT = "ENVIRONMENT";
 
@@ -41,7 +41,7 @@ class PropertyPlaceholderBeanDefinitionParser extends AbstractPropertyLoadingBea
 	@Override
 	@SuppressWarnings("deprecation")
 	protected Class<?> getBeanClass(Element element) {
-		// As of Spring 3.1, the default value of system-properties-mode has changed from
+		// As of Spring 3.1, the default value of system-properties-beans has changed from
 		// 'FALLBACK' to 'ENVIRONMENT'. This latter value indicates that resolution of
 		// placeholders against system properties is a function of the Environment and
 		// its current set of PropertySources.
@@ -49,7 +49,7 @@ class PropertyPlaceholderBeanDefinitionParser extends AbstractPropertyLoadingBea
 			return PropertySourcesPlaceholderConfigurer.class;
 		}
 
-		// The user has explicitly specified a value for system-properties-mode: revert to
+		// The user has explicitly specified a value for system-properties-beans: revert to
 		// PropertyPlaceholderConfigurer to ensure backward compatibility with 3.0 and earlier.
 		// This is deprecated; to be removed along with PropertyPlaceholderConfigurer itself.
 		return org.springframework.beans.factory.config.PropertyPlaceholderConfigurer.class;

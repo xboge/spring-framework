@@ -109,7 +109,7 @@ public class HessianExporter extends RemoteExporter implements InitializingBean 
 	}
 
 	/**
-	 * Set whether Hessian's debug mode should be enabled, logging to
+	 * Set whether Hessian's debug beans should be enabled, logging to
 	 * this exporter's Commons Logging log. Default is "false".
 	 * @see com.caucho.hessian.client.HessianProxyFactory#setDebug
 	 */

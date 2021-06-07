@@ -125,13 +125,13 @@ public class SpelExpression implements Expression {
 				return compiledAst.getValue(context.getRootObject().getValue(), context);
 			}
 			catch (Throwable ex) {
-				// If running in mixed mode, revert to interpreted
+				// If running in mixed beans, revert to interpreted
 				if (this.configuration.getCompilerMode() == SpelCompilerMode.MIXED) {
 					this.compiledAst = null;
 					this.interpretedCount.set(0);
 				}
 				else {
-					// Running in SpelCompilerMode.immediate mode - propagate exception to caller
+					// Running in SpelCompilerMode.immediate beans - propagate exception to caller
 					throw new SpelEvaluationException(ex, SpelMessage.EXCEPTION_RUNNING_COMPILED_EXPRESSION);
 				}
 			}
@@ -161,13 +161,13 @@ public class SpelExpression implements Expression {
 				}
 			}
 			catch (Throwable ex) {
-				// If running in mixed mode, revert to interpreted
+				// If running in mixed beans, revert to interpreted
 				if (this.configuration.getCompilerMode() == SpelCompilerMode.MIXED) {
 					this.compiledAst = null;
 					this.interpretedCount.set(0);
 				}
 				else {
-					// Running in SpelCompilerMode.immediate mode - propagate exception to caller
+					// Running in SpelCompilerMode.immediate beans - propagate exception to caller
 					throw new SpelEvaluationException(ex, SpelMessage.EXCEPTION_RUNNING_COMPILED_EXPRESSION);
 				}
 			}
@@ -189,13 +189,13 @@ public class SpelExpression implements Expression {
 				return compiledAst.getValue(rootObject, getEvaluationContext());
 			}
 			catch (Throwable ex) {
-				// If running in mixed mode, revert to interpreted
+				// If running in mixed beans, revert to interpreted
 				if (this.configuration.getCompilerMode() == SpelCompilerMode.MIXED) {
 					this.compiledAst = null;
 					this.interpretedCount.set(0);
 				}
 				else {
-					// Running in SpelCompilerMode.immediate mode - propagate exception to caller
+					// Running in SpelCompilerMode.immediate beans - propagate exception to caller
 					throw new SpelEvaluationException(ex, SpelMessage.EXCEPTION_RUNNING_COMPILED_EXPRESSION);
 				}
 			}
@@ -225,13 +225,13 @@ public class SpelExpression implements Expression {
 				}
 			}
 			catch (Throwable ex) {
-				// If running in mixed mode, revert to interpreted
+				// If running in mixed beans, revert to interpreted
 				if (this.configuration.getCompilerMode() == SpelCompilerMode.MIXED) {
 					this.compiledAst = null;
 					this.interpretedCount.set(0);
 				}
 				else {
-					// Running in SpelCompilerMode.immediate mode - propagate exception to caller
+					// Running in SpelCompilerMode.immediate beans - propagate exception to caller
 					throw new SpelEvaluationException(ex, SpelMessage.EXCEPTION_RUNNING_COMPILED_EXPRESSION);
 				}
 			}
@@ -256,13 +256,13 @@ public class SpelExpression implements Expression {
 				return compiledAst.getValue(context.getRootObject().getValue(), context);
 			}
 			catch (Throwable ex) {
-				// If running in mixed mode, revert to interpreted
+				// If running in mixed beans, revert to interpreted
 				if (this.configuration.getCompilerMode() == SpelCompilerMode.MIXED) {
 					this.compiledAst = null;
 					this.interpretedCount.set(0);
 				}
 				else {
-					// Running in SpelCompilerMode.immediate mode - propagate exception to caller
+					// Running in SpelCompilerMode.immediate beans - propagate exception to caller
 					throw new SpelEvaluationException(ex, SpelMessage.EXCEPTION_RUNNING_COMPILED_EXPRESSION);
 				}
 			}
@@ -292,13 +292,13 @@ public class SpelExpression implements Expression {
 				}
 			}
 			catch (Throwable ex) {
-				// If running in mixed mode, revert to interpreted
+				// If running in mixed beans, revert to interpreted
 				if (this.configuration.getCompilerMode() == SpelCompilerMode.MIXED) {
 					this.compiledAst = null;
 					this.interpretedCount.set(0);
 				}
 				else {
-					// Running in SpelCompilerMode.immediate mode - propagate exception to caller
+					// Running in SpelCompilerMode.immediate beans - propagate exception to caller
 					throw new SpelEvaluationException(ex, SpelMessage.EXCEPTION_RUNNING_COMPILED_EXPRESSION);
 				}
 			}
@@ -321,13 +321,13 @@ public class SpelExpression implements Expression {
 				return compiledAst.getValue(rootObject, context);
 			}
 			catch (Throwable ex) {
-				// If running in mixed mode, revert to interpreted
+				// If running in mixed beans, revert to interpreted
 				if (this.configuration.getCompilerMode() == SpelCompilerMode.MIXED) {
 					this.compiledAst = null;
 					this.interpretedCount.set(0);
 				}
 				else {
-					// Running in SpelCompilerMode.immediate mode - propagate exception to caller
+					// Running in SpelCompilerMode.immediate beans - propagate exception to caller
 					throw new SpelEvaluationException(ex, SpelMessage.EXCEPTION_RUNNING_COMPILED_EXPRESSION);
 				}
 			}
@@ -359,13 +359,13 @@ public class SpelExpression implements Expression {
 				}
 			}
 			catch (Throwable ex) {
-				// If running in mixed mode, revert to interpreted
+				// If running in mixed beans, revert to interpreted
 				if (this.configuration.getCompilerMode() == SpelCompilerMode.MIXED) {
 					this.compiledAst = null;
 					this.interpretedCount.set(0);
 				}
 				else {
-					// Running in SpelCompilerMode.immediate mode - propagate exception to caller
+					// Running in SpelCompilerMode.immediate beans - propagate exception to caller
 					throw new SpelEvaluationException(ex, SpelMessage.EXCEPTION_RUNNING_COMPILED_EXPRESSION);
 				}
 			}
@@ -480,7 +480,7 @@ public class SpelExpression implements Expression {
 	/**
 	 * Compile the expression if it has been evaluated more than the threshold number
 	 * of times to trigger compilation.
-	 * @param expressionState the expression state used to determine compilation mode
+	 * @param expressionState the expression state used to determine compilation beans
 	 */
 	private void checkCompile(ExpressionState expressionState) {
 		this.interpretedCount.incrementAndGet();

@@ -163,7 +163,7 @@ public class LocalSessionFactoryBuilder extends Configuration {
 			getProperties().put(AvailableSettings.DATASOURCE, dataSource);
 		}
 
-		// Hibernate 5.1/5.2: manually enforce connection release mode ON_CLOSE (the former default)
+		// Hibernate 5.1/5.2: manually enforce connection release beans ON_CLOSE (the former default)
 		try {
 			// Try Hibernate 5.2
 			AvailableSettings.class.getField("CONNECTION_HANDLING");
@@ -227,7 +227,7 @@ public class LocalSessionFactoryBuilder extends Configuration {
 
 		getProperties().put(AvailableSettings.TRANSACTION_COORDINATOR_STRATEGY, "jta");
 
-		// Hibernate 5.1/5.2: manually enforce connection release mode AFTER_STATEMENT (the JTA default)
+		// Hibernate 5.1/5.2: manually enforce connection release beans AFTER_STATEMENT (the JTA default)
 		try {
 			// Try Hibernate 5.2
 			AvailableSettings.class.getField("CONNECTION_HANDLING");
@@ -406,7 +406,7 @@ public class LocalSessionFactoryBuilder extends Configuration {
 	 * using the given executor for a parallel initialization phase
 	 * (e.g. a {@link org.springframework.core.task.SimpleAsyncTaskExecutor}).
 	 * <p>{@code SessionFactory} initialization will then switch into background
-	 * bootstrap mode, with a {@code SessionFactory} proxy immediately returned for
+	 * bootstrap beans, with a {@code SessionFactory} proxy immediately returned for
 	 * injection purposes instead of waiting for Hibernate's bootstrapping to complete.
 	 * However, note that the first actual call to a {@code SessionFactory} method will
 	 * then block until Hibernate's bootstrapping completed, if not ready by then.

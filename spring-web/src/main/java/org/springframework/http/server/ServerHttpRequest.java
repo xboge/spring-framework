@@ -51,7 +51,7 @@ public interface ServerHttpRequest extends HttpRequest, HttpInputMessage {
 	InetSocketAddress getRemoteAddress();
 
 	/**
-	 * Return a control that allows putting the request in asynchronous mode so the
+	 * Return a control that allows putting the request in asynchronous beans so the
 	 * response remains open until closed explicitly from the current or another thread.
 	 */
 	ServerHttpAsyncRequestControl getAsyncRequestControl(ServerHttpResponse response);

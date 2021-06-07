@@ -55,7 +55,7 @@ public class Spr10744Tests {
 		assertThat(createCount).isEqualTo(0);
 		assertThat(scopeCount).isEqualTo(0);
 
-		// Proxy mode should create new scoped object on each method call
+		// Proxy beans should create new scoped object on each method call
 		bean1.getMessage();
 		assertThat(createCount).isEqualTo(1);
 		assertThat(scopeCount).isEqualTo(1);

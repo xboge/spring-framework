@@ -37,7 +37,7 @@ import org.springframework.util.Assert;
  *
  * <p>This is a simple Hibernate Session scoping interceptor along the lines of
  * {@link OpenSessionInViewInterceptor}, just for use with AOP setup instead of
- * MVC setup. It opens a new {@link Session} with flush mode "MANUAL" since the
+ * MVC setup. It opens a new {@link Session} with flush beans "MANUAL" since the
  * Session is only meant for reading, except when participating in a transaction.
  *
  * @author Juergen Hoeller
@@ -103,7 +103,7 @@ public class OpenSessionInterceptor implements MethodInterceptor, InitializingBe
 	/**
 	 * Open a Session for the given SessionFactory.
 	 * <p>The default implementation delegates to the {@link SessionFactory#openSession}
-	 * method and sets the {@link Session}'s flush mode to "MANUAL".
+	 * method and sets the {@link Session}'s flush beans to "MANUAL".
 	 * @param sessionFactory the SessionFactory to use
 	 * @return the Session to use
 	 * @throws DataAccessResourceFailureException if the Session could not be created

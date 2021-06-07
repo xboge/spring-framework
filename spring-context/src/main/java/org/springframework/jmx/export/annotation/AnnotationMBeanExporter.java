@@ -28,7 +28,7 @@ import org.springframework.jmx.export.naming.MetadataNamingStrategy;
  *
  * <p>Sets a {@link MetadataNamingStrategy} and a {@link MetadataMBeanInfoAssembler}
  * with an {@link AnnotationJmxAttributeSource}, and activates the
- * {@link #AUTODETECT_ALL} mode by default.
+ * {@link #AUTODETECT_ALL} beans by default.
  *
  * @author Juergen Hoeller
  * @since 2.5

@@ -57,9 +57,9 @@ import org.springframework.util.ClassUtils;
  * This factory generally works with JMS 1.1 as well as the JMS 1.0.2 API.
  *
  * <p>Note that when using the JMS 1.0.2 API, this ConnectionFactory will switch
- * into queue/topic mode according to the JMS API methods used at runtime:
+ * into queue/topic beans according to the JMS API methods used at runtime:
  * {@code createQueueConnection} and {@code createTopicConnection} will
- * lead to queue/topic mode, respectively; generic {@code createConnection}
+ * lead to queue/topic beans, respectively; generic {@code createConnection}
  * calls will lead to a JMS 1.1 connection which is able to serve both modes.
  *
  * <p>As of Spring Framework 5, this class supports JMS 2.0 {@code JMSContext}
@@ -447,7 +447,7 @@ public class SingleConnectionFactory implements ConnectionFactory, QueueConnecti
 	 * possibly delegating to {@link #createSession} for the creation of raw
 	 * Session objects that will then get wrapped and returned from here.
 	 * @param con the JMS Connection to operate on
-	 * @param mode the Session acknowledgement mode
+	 * @param mode the Session acknowledgement beans
 	 * ({@code Session.TRANSACTED} or one of the common modes)
 	 * @return the Session to use, or {@code null} to indicate
 	 * creation of a raw standard Session
@@ -460,9 +460,9 @@ public class SingleConnectionFactory implements ConnectionFactory, QueueConnecti
 
 	/**
 	 * Create a default Session for this ConnectionFactory,
-	 * adapting to JMS 1.0.2 style queue/topic mode if necessary.
+	 * adapting to JMS 1.0.2 style queue/topic beans if necessary.
 	 * @param con the JMS Connection to operate on
-	 * @param mode the Session acknowledgement mode
+	 * @param mode the Session acknowledgement beans
 	 * ({@code Session.TRANSACTED} or one of the common modes)
 	 * @return the newly created Session
 	 * @throws JMSException if thrown by the JMS API

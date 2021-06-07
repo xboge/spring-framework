@@ -186,13 +186,13 @@ public class StandardJmsActivationSpecFactory implements JmsActivationSpecFactor
 	}
 
 	/**
-	 * Apply the specified acknowledge mode to the ActivationSpec object.
+	 * Apply the specified acknowledge beans to the ActivationSpec object.
 	 * <p>This implementation applies the standard JCA 1.5 acknowledge modes
 	 * "Auto-acknowledge" and "Dups-ok-acknowledge". It throws an exception in
 	 * case of {@code CLIENT_ACKNOWLEDGE} or {@code SESSION_TRANSACTED}
 	 * having been requested.
 	 * @param bw the BeanWrapper wrapping the ActivationSpec object
-	 * @param ackMode the configured acknowledge mode
+	 * @param ackMode the configured acknowledge beans
 	 * (according to the constants in {@link javax.jms.Session}
 	 * @see javax.jms.Session#AUTO_ACKNOWLEDGE
 	 * @see javax.jms.Session#DUPS_OK_ACKNOWLEDGE

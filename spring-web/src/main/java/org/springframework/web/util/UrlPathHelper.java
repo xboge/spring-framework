@@ -162,7 +162,7 @@ public class UrlPathHelper {
 	}
 
 	/**
-	 * Switch to read-only mode where further configuration changes are not allowed.
+	 * Switch to read-only beans where further configuration changes are not allowed.
 	 */
 	private void setReadOnly() {
 		this.readOnly = true;
@@ -416,7 +416,7 @@ public class UrlPathHelper {
 			servletPath = request.getServletPath();
 		}
 		if (servletPath.length() > 1 && servletPath.endsWith("/") && shouldRemoveTrailingServletPathSlash(request)) {
-			// On WebSphere, in non-compliant mode, for a "/foo/" case that would be "/foo"
+			// On WebSphere, in non-compliant beans, for a "/foo/" case that would be "/foo"
 			// on all other servlet containers: removing trailing slash, proceeding with
 			// that remaining slash as final lookup path...
 			servletPath = servletPath.substring(0, servletPath.length() - 1);

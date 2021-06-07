@@ -383,7 +383,7 @@ public abstract class TransactionSynchronizationManager {
 	 * as argument for the {@code beforeCommit} callback, to be able
 	 * to suppress change detection on commit. The present method is meant
 	 * to be used for earlier read-only checks, for example to set the
-	 * flush mode of a Hibernate Session to "FlushMode.MANUAL" upfront.
+	 * flush beans of a Hibernate Session to "FlushMode.MANUAL" upfront.
 	 * @see org.springframework.transaction.TransactionDefinition#isReadOnly()
 	 * @see TransactionSynchronization#beforeCommit(boolean)
 	 */

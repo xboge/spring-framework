@@ -50,7 +50,7 @@ import org.springframework.web.util.WebUtils;
  * <p>Subclasses may use {@link #isAsyncDispatch(HttpServletRequest)} to
  * determine when a filter is invoked as part of an async dispatch, and use
  * {@link #isAsyncStarted(HttpServletRequest)} to determine when the request
- * has been placed in async mode and therefore the current dispatch won't be
+ * has been placed in async beans and therefore the current dispatch won't be
  * the last one for the given request.
  *
  * <p>Yet another dispatch type that also occurs in its own thread is
@@ -149,7 +149,7 @@ public abstract class OncePerRequestFilter extends GenericFilterBean {
 	}
 
 	/**
-	 * Whether request processing is in asynchronous mode meaning that the
+	 * Whether request processing is in asynchronous beans meaning that the
 	 * response will not be committed after the current thread is exited.
 	 * @param request the current request
 	 * @since 3.2

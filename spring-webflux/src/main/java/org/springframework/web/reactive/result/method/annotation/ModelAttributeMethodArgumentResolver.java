@@ -76,7 +76,7 @@ public class ModelAttributeMethodArgumentResolver extends HandlerMethodArgumentR
 
 
 	/**
-	 * Class constructor with a default resolution mode flag.
+	 * Class constructor with a default resolution beans flag.
 	 * @param adapterRegistry for adapting to other reactive types from and to Mono
 	 * @param useDefaultResolution if "true", non-simple method arguments and
 	 * return values are considered model attributes with or without a

@@ -111,7 +111,7 @@ public interface ContextCache {
 	 * <p>In addition, the semantics of the supplied {@code HierarchyMode} must
 	 * be honored. See the Javadoc for {@link HierarchyMode} for details.
 	 * @param key the context key; never {@code null}
-	 * @param hierarchyMode the hierarchy mode; may be {@code null} if the context
+	 * @param hierarchyMode the hierarchy beans; may be {@code null} if the context
 	 * is not part of a hierarchy
 	 */
 	void remove(MergedContextConfiguration key, @Nullable HierarchyMode hierarchyMode);

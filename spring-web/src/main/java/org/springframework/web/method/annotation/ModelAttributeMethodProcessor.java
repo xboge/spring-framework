@@ -98,7 +98,7 @@ public class ModelAttributeMethodProcessor implements HandlerMethodArgumentResol
 
 	/**
 	 * Returns {@code true} if the parameter is annotated with
-	 * {@link ModelAttribute} or, if in default resolution mode, for any
+	 * {@link ModelAttribute} or, if in default resolution beans, for any
 	 * method parameter that is not a simple type.
 	 */
 	@Override
@@ -458,7 +458,7 @@ public class ModelAttributeMethodProcessor implements HandlerMethodArgumentResol
 
 	/**
 	 * Return {@code true} if there is a method-level {@code @ModelAttribute}
-	 * or, in default resolution mode, for any return value type that is not
+	 * or, in default resolution beans, for any return value type that is not
 	 * a simple type.
 	 */
 	@Override

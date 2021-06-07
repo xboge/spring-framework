@@ -113,7 +113,7 @@ class ConstructorResolver {
 	 * "autowire constructor" (with constructor arguments by type) behavior.
 	 * Also applied if explicit constructor argument values are specified,
 	 * matching all remaining arguments with beans from the bean factory.
-	 * <p>This corresponds to constructor injection: In this mode, a Spring
+	 * <p>This corresponds to constructor injection: In this beans, a Spring
 	 * bean factory is able to host components that expect constructor-based
 	 * dependency resolution.
 	 * @param beanName the name of the bean
@@ -566,7 +566,7 @@ class ConstructorResolver {
 					// Find out about ambiguity: In case of the same type difference weight
 					// for methods with the same number of parameters, collect such candidates
 					// and eventually raise an ambiguity exception.
-					// However, only perform that check in non-lenient constructor resolution mode,
+					// However, only perform that check in non-lenient constructor resolution beans,
 					// and explicitly ignore overridden methods (with the same parameter signature).
 					else if (factoryMethodToUse != null && typeDiffWeight == minTypeDiffWeight &&
 							!mbd.isLenientConstructorResolution() &&

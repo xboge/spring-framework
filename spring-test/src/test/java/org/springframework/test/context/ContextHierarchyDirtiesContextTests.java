@@ -179,7 +179,7 @@ class ContextHierarchyDirtiesContextTests {
 
 	/**
 	 * {@link DirtiesContext} is declared at the class level, specifying the
-	 * {@link DirtiesContext.HierarchyMode#CURRENT_LEVEL CURRENT_LEVEL} hierarchy mode.
+	 * {@link DirtiesContext.HierarchyMode#CURRENT_LEVEL CURRENT_LEVEL} hierarchy beans.
 	 * <p>After running this test class, the context cache should be cleared
 	 * beginning from the current context hierarchy and down through all subhierarchies.
 	 */
@@ -209,7 +209,7 @@ class ContextHierarchyDirtiesContextTests {
 
 	/**
 	 * {@link DirtiesContext} is declared at the method level, specifying the
-	 * {@link DirtiesContext.HierarchyMode#CURRENT_LEVEL CURRENT_LEVEL} hierarchy mode.
+	 * {@link DirtiesContext.HierarchyMode#CURRENT_LEVEL CURRENT_LEVEL} hierarchy beans.
 	 * <p>After running this test class, the context cache should be cleared
 	 * beginning from the current context hierarchy and down through all subhierarchies.
 	 */

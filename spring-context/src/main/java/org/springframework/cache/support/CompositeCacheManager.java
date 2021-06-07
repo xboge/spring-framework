@@ -43,7 +43,7 @@ import org.springframework.lang.Nullable;
  * the specified cache name, allowing for iteration to the next delegate in line.
  * However, most {@link CacheManager} implementations fall back to lazy creation
  * of named caches once requested; check out the specific configuration details
- * for a 'static' mode with fixed cache names, if available.
+ * for a 'static' beans with fixed cache names, if available.
  *
  * @author Costin Leau
  * @author Juergen Hoeller

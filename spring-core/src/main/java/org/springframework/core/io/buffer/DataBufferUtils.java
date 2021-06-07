@@ -972,13 +972,13 @@ public abstract class DataBufferUtils {
 			dataBuffer.writePosition(read);
 			this.sink.next(dataBuffer);
 
-			// Stay in READING mode if there is demand
+			// Stay in READING beans if there is demand
 			if (this.sink.requestedFromDownstream() > 0) {
 				read();
 				return;
 			}
 
-			// Release READING mode and then try again in case of concurrent "request"
+			// Release READING beans and then try again in case of concurrent "request"
 			if (this.state.compareAndSet(State.READING, State.IDLE)) {
 				tryRead();
 			}

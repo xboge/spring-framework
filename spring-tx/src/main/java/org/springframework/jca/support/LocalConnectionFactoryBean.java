@@ -26,7 +26,7 @@ import org.springframework.lang.Nullable;
 
 /**
  * {@link org.springframework.beans.factory.FactoryBean} that creates
- * a local JCA connection factory in "non-managed" mode (as defined by the
+ * a local JCA connection factory in "non-managed" beans (as defined by the
  * Java Connector Architecture specification). This is a direct alternative
  * to a {@link org.springframework.jndi.JndiObjectFactoryBean} definition that
  * obtains a connection factory handle from a Java EE server's naming environment.
@@ -44,7 +44,7 @@ import org.springframework.lang.Nullable;
  * you can also specify a {@link #setConnectionManager "connectionManager"},
  * in order to use a custom ConnectionManager instead of the connector's default.
  *
- * <p><b>NOTE:</b> In non-managed mode, a connector is not deployed on an
+ * <p><b>NOTE:</b> In non-managed beans, a connector is not deployed on an
  * application server, or more specifically not interacting with an application
  * server. Consequently, it cannot use a Java EE server's system contracts:
  * connection management, transaction management, and security management.

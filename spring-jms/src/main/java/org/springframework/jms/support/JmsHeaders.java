@@ -52,7 +52,7 @@ public interface JmsHeaders {
 	String DESTINATION = PREFIX + "destination";
 
 	/**
-	 * Distribution mode.
+	 * Distribution beans.
 	 * <p>Read-only value.
 	 * @see javax.jms.Message#getJMSDeliveryMode()
 	 * @see javax.jms.DeliveryMode

@@ -112,7 +112,7 @@ public @interface SqlConfig {
 	String transactionManager() default "";
 
 	/**
-	 * The <em>mode</em> to use when determining whether SQL scripts should be
+	 * The <em>beans</em> to use when determining whether SQL scripts should be
 	 * executed within a transaction.
 	 * <p>Defaults to {@link TransactionMode#DEFAULT DEFAULT}.
 	 * <p>Can be set to {@link TransactionMode#ISOLATED} to ensure that the SQL
@@ -183,7 +183,7 @@ public @interface SqlConfig {
 	String blockCommentEndDelimiter() default "";
 
 	/**
-	 * The <em>mode</em> to use when an error is encountered while executing an
+	 * The <em>beans</em> to use when an error is encountered while executing an
 	 * SQL statement.
 	 * <p>Defaults to {@link ErrorMode#DEFAULT DEFAULT}.
 	 * @see ErrorMode
@@ -199,23 +199,23 @@ public @interface SqlConfig {
 	enum TransactionMode {
 
 		/**
-		 * Indicates that the <em>default</em> transaction mode should be used.
+		 * Indicates that the <em>default</em> transaction beans should be used.
 		 * <p>The meaning of <em>default</em> depends on the context in which
 		 * {@code @SqlConfig} is declared:
 		 * <ul>
 		 * <li>If {@code @SqlConfig} is declared <strong>only</strong> locally,
-		 * the default transaction mode is {@link #INFERRED}.</li>
+		 * the default transaction beans is {@link #INFERRED}.</li>
 		 * <li>If {@code @SqlConfig} is declared globally, the default transaction
-		 * mode is {@link #INFERRED}.</li>
+		 * beans is {@link #INFERRED}.</li>
 		 * <li>If {@code @SqlConfig} is declared globally <strong>and</strong>
-		 * locally, the default transaction mode for the local declaration is
+		 * locally, the default transaction beans for the local declaration is
 		 * inherited from the global declaration.</li>
 		 * </ul>
 		 */
 		DEFAULT,
 
 		/**
-		 * Indicates that the transaction mode to use when executing SQL
+		 * Indicates that the transaction beans to use when executing SQL
 		 * scripts should be <em>inferred</em> using the rules listed below.
 		 * In the context of these rules, the term "<em>available</em>"
 		 * means that the bean for the data source or transaction manager
@@ -256,7 +256,7 @@ public @interface SqlConfig {
 		/**
 		 * Indicates that SQL scripts should always be executed in a new,
 		 * <em>isolated</em> transaction that will be immediately committed.
-		 * <p>In contrast to {@link #INFERRED}, this mode requires the
+		 * <p>In contrast to {@link #INFERRED}, this beans requires the
 		 * presence of a transaction manager <strong>and</strong> a data
 		 * source.
 		 */
@@ -271,16 +271,16 @@ public @interface SqlConfig {
 	enum ErrorMode {
 
 		/**
-		 * Indicates that the <em>default</em> error mode should be used.
+		 * Indicates that the <em>default</em> error beans should be used.
 		 * <p>The meaning of <em>default</em> depends on the context in which
 		 * {@code @SqlConfig} is declared:
 		 * <ul>
 		 * <li>If {@code @SqlConfig} is declared <strong>only</strong> locally,
-		 * the default error mode is {@link #FAIL_ON_ERROR}.</li>
+		 * the default error beans is {@link #FAIL_ON_ERROR}.</li>
 		 * <li>If {@code @SqlConfig} is declared globally, the default error
-		 * mode is {@link #FAIL_ON_ERROR}.</li>
+		 * beans is {@link #FAIL_ON_ERROR}.</li>
 		 * <li>If {@code @SqlConfig} is declared globally <strong>and</strong>
-		 * locally, the default error mode for the local declaration is
+		 * locally, the default error beans for the local declaration is
 		 * inherited from the global declaration.</li>
 		 * </ul>
 		 */
@@ -289,7 +289,7 @@ public @interface SqlConfig {
 		/**
 		 * Indicates that script execution will fail if an error is encountered.
 		 * In other words, no errors should be ignored.
-		 * <p>This is effectively the default error mode so that if a script
+		 * <p>This is effectively the default error beans so that if a script
 		 * is accidentally executed, it will fail fast if any SQL statement in
 		 * the script results in an error.
 		 * @see #CONTINUE_ON_ERROR

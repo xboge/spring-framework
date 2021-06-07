@@ -75,7 +75,7 @@ public final class CachedIntrospectionResults {
 
 	/**
 	 * System property that instructs Spring to use the {@link Introspector#IGNORE_ALL_BEANINFO}
-	 * mode when calling the JavaBeans {@link Introspector}: "spring.beaninfo.ignore", with a
+	 * beans when calling the JavaBeans {@link Introspector}: "spring.beaninfo.ignore", with a
 	 * value of "true" skipping the search for {@code BeanInfo} classes (typically for scenarios
 	 * where no such classes are being defined for beans in the application in the first place).
 	 * <p>The default is "false", considering all {@code BeanInfo} metadata classes, like for

@@ -130,7 +130,7 @@ public abstract class AbstractListenerWebSocketSession<T> extends AbstractWebSoc
 	 * Whether the underlying WebSocket API has flow control and can suspend and
 	 * resume the receiving of messages.
 	 * <p><strong>Note:</strong> Sub-classes are encouraged to start out in
-	 * suspended mode, if possible, and wait until demand is received.
+	 * suspended beans, if possible, and wait until demand is received.
 	 */
 	protected abstract boolean canSuspendReceiving();
 

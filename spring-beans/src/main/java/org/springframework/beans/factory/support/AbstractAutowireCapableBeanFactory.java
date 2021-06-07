@@ -1345,7 +1345,7 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 	 * "autowire constructor" (with constructor arguments by type) behavior.
 	 * Also applied if explicit constructor argument values are specified,
 	 * matching all remaining arguments with beans from the bean factory.
-	 * <p>This corresponds to constructor injection: In this mode, a Spring
+	 * <p>This corresponds to constructor injection: In this beans, a Spring
 	 * bean factory is able to host components that expect constructor-based
 	 * dependency resolution.
 	 * @param beanName the name of the bean
@@ -1974,7 +1974,7 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 
 
 	/**
-	 * Special DependencyDescriptor variant for Spring's good old autowire="byType" mode.
+	 * Special DependencyDescriptor variant for Spring's good old autowire="byType" beans.
 	 * Always optional; never considering the parameter name for choosing a primary candidate.
 	 */
 	@SuppressWarnings("serial")

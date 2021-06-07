@@ -62,7 +62,7 @@ import org.springframework.util.ConcurrentReferenceHashMap;
  * versus the automatic joining on each user-level EntityManager operation in the
  * "container" case. As of JPA 2.1, both join modes are available with both kinds of
  * EntityManagers, so the difference between "application-" and "container-managed"
- * is now primarily in the join mode default and in the restricted lifecycle of a
+ * is now primarily in the join beans default and in the restricted lifecycle of a
  * container-managed EntityManager (i.e. tied to the object that it is injected into).
  *
  * @author Juergen Hoeller

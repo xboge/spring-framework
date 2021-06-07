@@ -138,7 +138,7 @@ public class HessianClientInterceptor extends UrlBasedRemoteAccessor implements 
 	}
 
 	/**
-	 * Set whether Hessian's debug mode should be enabled.
+	 * Set whether Hessian's debug beans should be enabled.
 	 * Default is "false".
 	 * @see com.caucho.hessian.client.HessianProxyFactory#setDebug
 	 */

@@ -35,7 +35,7 @@ import org.springframework.util.ObjectUtils;
 
 /**
  * {@link CacheManager} implementation that lazily builds {@link CaffeineCache}
- * instances for each {@link #getCache} request. Also supports a 'static' mode
+ * instances for each {@link #getCache} request. Also supports a 'static' beans
  * where the set of cache names is pre-defined through {@link #setCacheNames},
  * with no dynamic creation of further cache regions at runtime.
  *
@@ -87,11 +87,11 @@ public class CaffeineCacheManager implements CacheManager {
 
 
 	/**
-	 * Specify the set of cache names for this CacheManager's 'static' mode.
+	 * Specify the set of cache names for this CacheManager's 'static' beans.
 	 * <p>The number of caches and their names will be fixed after a call to this method,
 	 * with no creation of further cache regions at runtime.
 	 * <p>Calling this with a {@code null} collection argument resets the
-	 * mode to 'dynamic', allowing for further creation of caches again.
+	 * beans to 'dynamic', allowing for further creation of caches again.
 	 */
 	public void setCacheNames(@Nullable Collection<String> cacheNames) {
 		if (cacheNames != null) {

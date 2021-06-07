@@ -51,11 +51,11 @@ import org.springframework.web.filter.OncePerRequestFilter;
  * as well as for non-transactional execution (if configured appropriately).
  *
  * <p><b>NOTE</b>: This filter will by default <i>not</i> flush the Hibernate Session,
- * with the flush mode set to {@code FlushMode.MANUAL}. It assumes to be used
+ * with the flush beans set to {@code FlushMode.MANUAL}. It assumes to be used
  * in combination with service layer transactions that care for the flushing: The
- * active transaction manager will temporarily change the flush mode to
+ * active transaction manager will temporarily change the flush beans to
  * {@code FlushMode.AUTO} during a read-write transaction, with the flush
- * mode reset to {@code FlushMode.MANUAL} at the end of each transaction.
+ * beans reset to {@code FlushMode.MANUAL} at the end of each transaction.
  *
  * <p><b>WARNING:</b> Applying this filter to existing logic can cause issues that
  * have not appeared before, through the use of a single Hibernate Session for the
@@ -198,7 +198,7 @@ public class OpenSessionInViewFilter extends OncePerRequestFilter {
 	/**
 	 * Open a Session for the SessionFactory that this filter uses.
 	 * <p>The default implementation delegates to the {@link SessionFactory#openSession}
-	 * method and sets the {@link Session}'s flush mode to "MANUAL".
+	 * method and sets the {@link Session}'s flush beans to "MANUAL".
 	 * @param sessionFactory the SessionFactory that this filter uses
 	 * @return the Session to use
 	 * @throws DataAccessResourceFailureException if the Session could not be created

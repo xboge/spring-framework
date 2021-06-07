@@ -73,36 +73,36 @@ class ClassLevelDirtiesContextTestNGTests {
 		assertBehaviorForCleanTestCase();
 
 		runTestClassAndAssertStats(ClassLevelDirtiesContextWithCleanMethodsAndDefaultModeTestCase.class, 1);
-		assertContextCacheStatistics("after class-level @DirtiesContext with clean test method and default class mode",
+		assertContextCacheStatistics("after class-level @DirtiesContext with clean test method and default class beans",
 			0, cacheHits.incrementAndGet(), cacheMisses.get());
 		assertBehaviorForCleanTestCase();
 
 		runTestClassAndAssertStats(InheritedClassLevelDirtiesContextWithCleanMethodsAndDefaultModeTestCase.class, 1);
 		assertContextCacheStatistics(
-			"after inherited class-level @DirtiesContext with clean test method and default class mode", 0,
+			"after inherited class-level @DirtiesContext with clean test method and default class beans", 0,
 			cacheHits.incrementAndGet(), cacheMisses.get());
 		assertBehaviorForCleanTestCase();
 
 		runTestClassAndAssertStats(ClassLevelDirtiesContextWithCleanMethodsAndAfterClassModeTestCase.class, 1);
-		assertContextCacheStatistics("after class-level @DirtiesContext with clean test method and AFTER_CLASS mode",
+		assertContextCacheStatistics("after class-level @DirtiesContext with clean test method and AFTER_CLASS beans",
 			0, cacheHits.incrementAndGet(), cacheMisses.get());
 		assertBehaviorForCleanTestCase();
 
 		runTestClassAndAssertStats(InheritedClassLevelDirtiesContextWithCleanMethodsAndAfterClassModeTestCase.class, 1);
 		assertContextCacheStatistics(
-			"after inherited class-level @DirtiesContext with clean test method and AFTER_CLASS mode", 0,
+			"after inherited class-level @DirtiesContext with clean test method and AFTER_CLASS beans", 0,
 			cacheHits.incrementAndGet(), cacheMisses.get());
 		assertBehaviorForCleanTestCase();
 
 		runTestClassAndAssertStats(ClassLevelDirtiesContextWithAfterEachTestMethodModeTestCase.class, 3);
 		assertContextCacheStatistics(
-			"after class-level @DirtiesContext with clean test method and AFTER_EACH_TEST_METHOD mode", 0,
+			"after class-level @DirtiesContext with clean test method and AFTER_EACH_TEST_METHOD beans", 0,
 			cacheHits.incrementAndGet(), cacheMisses.addAndGet(2));
 		assertBehaviorForCleanTestCase();
 
 		runTestClassAndAssertStats(InheritedClassLevelDirtiesContextWithAfterEachTestMethodModeTestCase.class, 3);
 		assertContextCacheStatistics(
-			"after inherited class-level @DirtiesContext with clean test method and AFTER_EACH_TEST_METHOD mode", 0,
+			"after inherited class-level @DirtiesContext with clean test method and AFTER_EACH_TEST_METHOD beans", 0,
 			cacheHits.incrementAndGet(), cacheMisses.addAndGet(2));
 		assertBehaviorForCleanTestCase();
 
@@ -129,7 +129,7 @@ class ClassLevelDirtiesContextTestNGTests {
 		assertBehaviorForCleanTestCase();
 
 		runTestClassAndAssertStats(ClassLevelDirtiesContextWithCleanMethodsAndAfterClassModeTestCase.class, 1);
-		assertContextCacheStatistics("after class-level @DirtiesContext with clean test method and AFTER_CLASS mode",
+		assertContextCacheStatistics("after class-level @DirtiesContext with clean test method and AFTER_CLASS beans",
 			0, cacheHits.incrementAndGet(), cacheMisses.get());
 	}
 

@@ -41,7 +41,7 @@ public class XmlValidationModeDetector {
 	public static final int VALIDATION_NONE = 0;
 
 	/**
-	 * Indicates that the validation mode should be auto-guessed, since we cannot find
+	 * Indicates that the validation beans should be auto-guessed, since we cannot find
 	 * a clear indication (probably choked on some special characters, or the like).
 	 */
 	public static final int VALIDATION_AUTO = 1;
@@ -81,7 +81,7 @@ public class XmlValidationModeDetector {
 
 
 	/**
-	 * Detect the validation mode for the XML document in the supplied {@link InputStream}.
+	 * Detect the validation beans for the XML document in the supplied {@link InputStream}.
 	 * Note that the supplied {@link InputStream} is closed by this method before returning.
 	 * @param inputStream the InputStream to parse
 	 * @throws IOException in case of I/O failure

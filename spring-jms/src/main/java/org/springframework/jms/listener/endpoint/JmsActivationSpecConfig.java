@@ -177,13 +177,13 @@ public class JmsActivationSpecConfig {
 	}
 
 	/**
-	 * Set the JMS acknowledgement mode by the name of the corresponding constant
+	 * Set the JMS acknowledgement beans by the name of the corresponding constant
 	 * in the JMS {@link Session} interface, e.g. "CLIENT_ACKNOWLEDGE".
 	 * <p>Note that JCA resource adapters generally only support auto and dups-ok
 	 * (see Spring's {@link StandardJmsActivationSpecFactory}). ActiveMQ also
 	 * supports "SESSION_TRANSACTED" in the form of RA-managed transactions
 	 * (automatically translated by Spring's {@link DefaultJmsActivationSpecFactory}.
-	 * @param constantName the name of the {@link Session} acknowledge mode constant
+	 * @param constantName the name of the {@link Session} acknowledge beans constant
 	 * @see javax.jms.Session#AUTO_ACKNOWLEDGE
 	 * @see javax.jms.Session#CLIENT_ACKNOWLEDGE
 	 * @see javax.jms.Session#DUPS_OK_ACKNOWLEDGE
@@ -196,7 +196,7 @@ public class JmsActivationSpecConfig {
 	}
 
 	/**
-	 * Set the JMS acknowledgement mode to use.
+	 * Set the JMS acknowledgement beans to use.
 	 * @see javax.jms.Session#AUTO_ACKNOWLEDGE
 	 * @see javax.jms.Session#CLIENT_ACKNOWLEDGE
 	 * @see javax.jms.Session#DUPS_OK_ACKNOWLEDGE
@@ -207,7 +207,7 @@ public class JmsActivationSpecConfig {
 	}
 
 	/**
-	 * Return the JMS acknowledgement mode to use.
+	 * Return the JMS acknowledgement beans to use.
 	 */
 	public int getAcknowledgeMode() {
 		return this.acknowledgeMode;

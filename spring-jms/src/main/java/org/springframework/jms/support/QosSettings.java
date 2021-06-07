@@ -56,9 +56,9 @@ public class QosSettings {
 
 
 	/**
-	 * Set the delivery mode to use when sending a message.
+	 * Set the delivery beans to use when sending a message.
 	 * Default is the JMS Message default: "PERSISTENT".
-	 * @param deliveryMode the delivery mode to use
+	 * @param deliveryMode the delivery beans to use
 	 * @see javax.jms.DeliveryMode#PERSISTENT
 	 * @see javax.jms.DeliveryMode#NON_PERSISTENT
 	 * @see javax.jms.Message#DEFAULT_DELIVERY_MODE
@@ -69,7 +69,7 @@ public class QosSettings {
 	}
 
 	/**
-	 * Return the delivery mode to use when sending a message.
+	 * Return the delivery beans to use when sending a message.
 	 */
 	public int getDeliveryMode() {
 		return this.deliveryMode;

@@ -79,9 +79,9 @@ final class PersistenceUnitReader {
 
 	private static final String EXCLUDE_UNLISTED_CLASSES = "exclude-unlisted-classes";
 
-	private static final String SHARED_CACHE_MODE = "shared-cache-mode";
+	private static final String SHARED_CACHE_MODE = "shared-cache-beans";
 
-	private static final String VALIDATION_MODE = "validation-mode";
+	private static final String VALIDATION_MODE = "validation-beans";
 
 	private static final String META_INF = "META-INF";
 
@@ -234,13 +234,13 @@ final class PersistenceUnitReader {
 			unitInfo.setExcludeUnlistedClasses(!StringUtils.hasText(excludeText) || Boolean.parseBoolean(excludeText));
 		}
 
-		// set JPA 2.0 shared cache mode
+		// set JPA 2.0 shared cache beans
 		String cacheMode = DomUtils.getChildElementValueByTagName(persistenceUnit, SHARED_CACHE_MODE);
 		if (StringUtils.hasText(cacheMode)) {
 			unitInfo.setSharedCacheMode(SharedCacheMode.valueOf(cacheMode));
 		}
 
-		// set JPA 2.0 validation mode
+		// set JPA 2.0 validation beans
 		String validationMode = DomUtils.getChildElementValueByTagName(persistenceUnit, VALIDATION_MODE);
 		if (StringUtils.hasText(validationMode)) {
 			unitInfo.setValidationMode(ValidationMode.valueOf(validationMode));

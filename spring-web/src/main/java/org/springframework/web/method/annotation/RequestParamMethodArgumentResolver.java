@@ -54,7 +54,7 @@ import org.springframework.web.util.UriComponentsBuilder;
  * type {@link MultipartFile} in conjunction with Spring's {@link MultipartResolver}
  * abstraction, and arguments of type {@code javax.servlet.http.Part} in conjunction
  * with Servlet 3.0 multipart requests. This resolver can also be created in default
- * resolution mode in which simple types (int, long, etc.) not annotated with
+ * resolution beans in which simple types (int, long, etc.) not annotated with
  * {@link RequestParam @RequestParam} are also treated as request parameters with
  * the parameter name derived from the argument name.
  *
@@ -85,7 +85,7 @@ public class RequestParamMethodArgumentResolver extends AbstractNamedValueMethod
 
 	/**
 	 * Create a new {@link RequestParamMethodArgumentResolver} instance.
-	 * @param useDefaultResolution in default resolution mode a method argument
+	 * @param useDefaultResolution in default resolution beans a method argument
 	 * that is a simple type, as defined in {@link BeanUtils#isSimpleProperty},
 	 * is treated as a request parameter even if it isn't annotated, the
 	 * request parameter name is derived from the method parameter name.
@@ -99,7 +99,7 @@ public class RequestParamMethodArgumentResolver extends AbstractNamedValueMethod
 	 * @param beanFactory a bean factory used for resolving  ${...} placeholder
 	 * and #{...} SpEL expressions in default values, or {@code null} if default
 	 * values are not expected to contain expressions
-	 * @param useDefaultResolution in default resolution mode a method argument
+	 * @param useDefaultResolution in default resolution beans a method argument
 	 * that is a simple type, as defined in {@link BeanUtils#isSimpleProperty},
 	 * is treated as a request parameter even if it isn't annotated, the
 	 * request parameter name is derived from the method parameter name.
@@ -120,7 +120,7 @@ public class RequestParamMethodArgumentResolver extends AbstractNamedValueMethod
 	 * See {@link RequestParamMapMethodArgumentResolver} instead for such params.
 	 * <li>Arguments of type {@link MultipartFile} unless annotated with @{@link RequestPart}.
 	 * <li>Arguments of type {@code Part} unless annotated with @{@link RequestPart}.
-	 * <li>In default resolution mode, simple type arguments even if not with @{@link RequestParam}.
+	 * <li>In default resolution beans, simple type arguments even if not with @{@link RequestParam}.
 	 * </ul>
 	 */
 	@Override

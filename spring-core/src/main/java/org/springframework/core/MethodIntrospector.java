@@ -133,7 +133,7 @@ public final class MethodIntrospector {
 					"Need to invoke method '%s' declared on target class '%s', " +
 					"but not found in any interface(s) of the exposed proxy type. " +
 					"Either pull the method up to an interface or switch to CGLIB " +
-					"proxies by enforcing proxy-target-class mode in your configuration.",
+					"proxies by enforcing proxy-target-class beans in your configuration.",
 					method.getName(), method.getDeclaringClass().getSimpleName()));
 		}
 	}

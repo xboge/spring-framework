@@ -271,7 +271,7 @@ public class DefaultPersistenceUnitManager
 	}
 
 	/**
-	 * Specify the JPA 2.0 shared cache mode for all of this manager's persistence
+	 * Specify the JPA 2.0 shared cache beans for all of this manager's persistence
 	 * units, overriding any value in {@code persistence.xml} if set.
 	 * @since 4.0
 	 * @see javax.persistence.spi.PersistenceUnitInfo#getSharedCacheMode()
@@ -281,7 +281,7 @@ public class DefaultPersistenceUnitManager
 	}
 
 	/**
-	 * Specify the JPA 2.0 validation mode for all of this manager's persistence
+	 * Specify the JPA 2.0 validation beans for all of this manager's persistence
 	 * units, overriding any value in {@code persistence.xml} if set.
 	 * @since 4.0
 	 * @see javax.persistence.spi.PersistenceUnitInfo#getValidationMode()

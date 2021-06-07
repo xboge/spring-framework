@@ -88,9 +88,9 @@ public class ThreadPoolTaskScheduler extends ExecutorConfigurationSupport
 	}
 
 	/**
-	 * Set the remove-on-cancel mode on {@link ScheduledThreadPoolExecutor}.
+	 * Set the remove-on-cancel beans on {@link ScheduledThreadPoolExecutor}.
 	 * <p>Default is {@code false}. If set to {@code true}, the target executor will be
-	 * switched into remove-on-cancel mode (if possible, with a soft fallback otherwise).
+	 * switched into remove-on-cancel beans (if possible, with a soft fallback otherwise).
 	 * <p><b>This setting can be modified at runtime, for example through JMX.</b>
 	 */
 	public void setRemoveOnCancelPolicy(boolean removeOnCancelPolicy) {
@@ -184,7 +184,7 @@ public class ThreadPoolTaskScheduler extends ExecutorConfigurationSupport
 	}
 
 	/**
-	 * Return the current setting for the remove-on-cancel mode.
+	 * Return the current setting for the remove-on-cancel beans.
 	 * <p>Requires an underlying {@link ScheduledThreadPoolExecutor}.
 	 */
 	public boolean isRemoveOnCancelPolicy() {

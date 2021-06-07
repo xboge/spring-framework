@@ -576,11 +576,11 @@ public abstract class AbstractBeanDefinition extends BeanMetadataAttributeAccess
 	}
 
 	/**
-	 * Set the autowire mode. This determines whether any automagical detection
+	 * Set the autowire beans. This determines whether any automagical detection
 	 * and setting of bean references will happen. Default is AUTOWIRE_NO
 	 * which means there won't be convention-based autowiring by name or type
 	 * (however, there may still be explicit annotation-driven autowiring).
-	 * @param autowireMode the autowire mode to set.
+	 * @param autowireMode the autowire beans to set.
 	 * Must be one of the constants defined in this class.
 	 * @see #AUTOWIRE_NO
 	 * @see #AUTOWIRE_BY_NAME
@@ -593,7 +593,7 @@ public abstract class AbstractBeanDefinition extends BeanMetadataAttributeAccess
 	}
 
 	/**
-	 * Return the autowire mode as specified in the bean definition.
+	 * Return the autowire beans as specified in the bean definition.
 	 */
 	public int getAutowireMode() {
 		return this.autowireMode;
@@ -792,17 +792,17 @@ public abstract class AbstractBeanDefinition extends BeanMetadataAttributeAccess
 	}
 
 	/**
-	 * Specify whether to resolve constructors in lenient mode ({@code true},
+	 * Specify whether to resolve constructors in lenient beans ({@code true},
 	 * which is the default) or to switch to strict resolution (throwing an exception
 	 * in case of ambiguous constructors that all match when converting the arguments,
-	 * whereas lenient mode would use the one with the 'closest' type matches).
+	 * whereas lenient beans would use the one with the 'closest' type matches).
 	 */
 	public void setLenientConstructorResolution(boolean lenientConstructorResolution) {
 		this.lenientConstructorResolution = lenientConstructorResolution;
 	}
 
 	/**
-	 * Return whether to resolve constructors in lenient mode or in strict mode.
+	 * Return whether to resolve constructors in lenient beans or in strict beans.
 	 */
 	public boolean isLenientConstructorResolution() {
 		return this.lenientConstructorResolution;

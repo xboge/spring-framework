@@ -45,7 +45,7 @@ import org.springframework.lang.Nullable;
  * of threads in the pool to a potentially very high number. Consider also setting a
  * {@link #setMaxPoolSize "maxPoolSize"} at that point, as well as possibly a higher
  * {@link #setCorePoolSize "corePoolSize"} (see also the
- * {@link #setAllowCoreThreadTimeOut "allowCoreThreadTimeOut"} mode of scaling).
+ * {@link #setAllowCoreThreadTimeOut "allowCoreThreadTimeOut"} beans of scaling).
  *
  * <p>For an alternative, you may set up a {@link ThreadPoolExecutor} instance directly
  * using constructor injection, or use a factory method definition that points to the

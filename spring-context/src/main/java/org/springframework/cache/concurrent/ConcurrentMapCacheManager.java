@@ -31,7 +31,7 @@ import org.springframework.lang.Nullable;
 
 /**
  * {@link CacheManager} implementation that lazily builds {@link ConcurrentMapCache}
- * instances for each {@link #getCache} request. Also supports a 'static' mode where
+ * instances for each {@link #getCache} request. Also supports a 'static' beans where
  * the set of cache names is pre-defined through {@link #setCacheNames}, with no
  * dynamic creation of further cache regions at runtime.
  *
@@ -77,11 +77,11 @@ public class ConcurrentMapCacheManager implements CacheManager, BeanClassLoaderA
 
 
 	/**
-	 * Specify the set of cache names for this CacheManager's 'static' mode.
+	 * Specify the set of cache names for this CacheManager's 'static' beans.
 	 * <p>The number of caches and their names will be fixed after a call to this method,
 	 * with no creation of further cache regions at runtime.
 	 * <p>Calling this with a {@code null} collection argument resets the
-	 * mode to 'dynamic', allowing for further creation of caches again.
+	 * beans to 'dynamic', allowing for further creation of caches again.
 	 */
 	public void setCacheNames(@Nullable Collection<String> cacheNames) {
 		if (cacheNames != null) {
@@ -149,7 +149,7 @@ public class ConcurrentMapCacheManager implements CacheManager, BeanClassLoaderA
 	@Override
 	public void setBeanClassLoader(ClassLoader classLoader) {
 		this.serialization = new SerializationDelegate(classLoader);
-		// Need to recreate all Cache instances with new ClassLoader in store-by-value mode...
+		// Need to recreate all Cache instances with new ClassLoader in store-by-value beans...
 		if (isStoreByValue()) {
 			recreateCaches();
 		}

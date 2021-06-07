@@ -64,7 +64,7 @@ public abstract class AbstractIdentityColumnMaxValueIncrementer extends Abstract
 	/**
 	 * Specify whether to delete the entire range below the current maximum key value
 	 * ({@code false} - the default), or the specifically generated values ({@code true}).
-	 * The former mode will use a where range clause whereas the latter will use an in
+	 * The former beans will use a where range clause whereas the latter will use an in
 	 * clause starting with the lowest value minus 1, just preserving the maximum value.
 	 */
 	public void setDeleteSpecificValues(boolean deleteSpecificValues) {

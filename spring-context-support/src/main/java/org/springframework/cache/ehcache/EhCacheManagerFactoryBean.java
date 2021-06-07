@@ -117,7 +117,7 @@ public class EhCacheManagerFactoryBean implements FactoryBean<CacheManager>, Ini
 	 * However, it only supports a single EhCacheManagerFactoryBean involved which will
 	 * control the lifecycle of the underlying CacheManager (in particular, its shutdown).
 	 * <p>This flag overrides {@link #setAcceptExisting "acceptExisting"} if both are set,
-	 * since it indicates the 'stronger' mode of sharing.
+	 * since it indicates the 'stronger' beans of sharing.
 	 * @see #setCacheManagerName
 	 * @see #setAcceptExisting
 	 * @see net.sf.ehcache.CacheManager#create()

@@ -55,7 +55,7 @@ import org.springframework.web.util.UrlPathHelper;
  * <li>{@link HttpServletResponse#sendRedirect(String) sendRedirect(String)}.
  * </ul>
  *
- * <p>This filter can also be used in a {@link #setRemoveOnly removeOnly} mode
+ * <p>This filter can also be used in a {@link #setRemoveOnly removeOnly} beans
  * where "Forwarded" and "X-Forwarded-*" headers are eliminated, and not used.
  *
  * @author Rossen Stoyanchev
@@ -85,7 +85,7 @@ public class ForwardedHeaderFilter extends OncePerRequestFilter {
 
 
 	/**
-	 * Enables mode in which any "Forwarded" or "X-Forwarded-*" headers are
+	 * Enables beans in which any "Forwarded" or "X-Forwarded-*" headers are
 	 * removed only and the information in them ignored.
 	 * @param removeOnly whether to discard and ignore forwarded headers
 	 * @since 4.3.9

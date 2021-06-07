@@ -107,13 +107,13 @@ public @interface TestExecutionListeners {
 	boolean inheritListeners() default true;
 
 	/**
-	 * The <em>merge mode</em> to use when {@code @TestExecutionListeners} is
+	 * The <em>merge beans</em> to use when {@code @TestExecutionListeners} is
 	 * declared on a class that does <strong>not</strong> inherit listeners
 	 * from a superclass.
 	 * <p>Can be set to {@link MergeMode#MERGE_WITH_DEFAULTS MERGE_WITH_DEFAULTS}
 	 * to have locally declared listeners <em>merged</em> with the default
 	 * listeners.
-	 * <p>The mode is ignored if listeners are inherited from a superclass.
+	 * <p>The beans is ignored if listeners are inherited from a superclass.
 	 * <p>Defaults to {@link MergeMode#REPLACE_DEFAULTS REPLACE_DEFAULTS}
 	 * for backwards compatibility.
 	 * @see MergeMode

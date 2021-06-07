@@ -534,7 +534,7 @@ public abstract class AbstractJmsListeningContainer extends JmsDestinationAccess
 
 	/**
 	 * Try to resume all paused tasks.
-	 * Tasks for which rescheduling failed simply remain in paused mode.
+	 * Tasks for which rescheduling failed simply remain in paused beans.
 	 */
 	protected void resumePausedTasks() {
 		synchronized (this.lifecycleMonitor) {
@@ -550,7 +550,7 @@ public abstract class AbstractJmsListeningContainer extends JmsDestinationAccess
 					}
 					catch (RuntimeException ex) {
 						logRejectedTask(task, ex);
-						// Keep the task in paused mode...
+						// Keep the task in paused beans...
 					}
 				}
 			}

@@ -32,7 +32,7 @@ import org.springframework.util.StringUtils;
  * the actual building of the URI.
  *
  * <p>Provides options to create {@link UriBuilder} instances with a common
- * base URI, alternative encoding mode strategies, among others.
+ * base URI, alternative encoding beans strategies, among others.
  *
  * @author Rossen Stoyanchev
  * @since 5.0
@@ -81,21 +81,21 @@ public class DefaultUriBuilderFactory implements UriBuilderFactory {
 
 
 	/**
-	 * Set the {@link EncodingMode encoding mode} to use.
+	 * Set the {@link EncodingMode encoding beans} to use.
 	 * <p>By default this is set to {@link EncodingMode#TEMPLATE_AND_VALUES
 	 * EncodingMode.TEMPLATE_AND_VALUES}.
 	 * <p><strong>Note:</strong> Prior to 5.1 the default was
 	 * {@link EncodingMode#URI_COMPONENT EncodingMode.URI_COMPONENT}
 	 * therefore the {@code WebClient} {@code RestTemplate} have switched their
 	 * default behavior.
-	 * @param encodingMode the encoding mode to use
+	 * @param encodingMode the encoding beans to use
 	 */
 	public void setEncodingMode(EncodingMode encodingMode) {
 		this.encodingMode = encodingMode;
 	}
 
 	/**
-	 * Return the configured encoding mode.
+	 * Return the configured encoding beans.
 	 */
 	public EncodingMode getEncodingMode() {
 		return this.encodingMode;
@@ -121,7 +121,7 @@ public class DefaultUriBuilderFactory implements UriBuilderFactory {
 	}
 
 	/**
-	 * Whether to parse the input path into path segments if the encoding mode
+	 * Whether to parse the input path into path segments if the encoding beans
 	 * is set to {@link EncodingMode#URI_COMPONENT EncodingMode.URI_COMPONENT},
 	 * which ensures that URI variables in the path are encoded according to
 	 * path segment rules and for example a '/' is encoded.
@@ -133,7 +133,7 @@ public class DefaultUriBuilderFactory implements UriBuilderFactory {
 	}
 
 	/**
-	 * Whether to parse the path into path segments if the encoding mode is set
+	 * Whether to parse the path into path segments if the encoding beans is set
 	 * to {@link EncodingMode#URI_COMPONENT EncodingMode.URI_COMPONENT}.
 	 */
 	public boolean shouldParsePath() {
@@ -188,7 +188,7 @@ public class DefaultUriBuilderFactory implements UriBuilderFactory {
 		 * <li>For URI variables do the same and also replace characters with
 		 * reserved meaning.
 		 * </ul>
-		 * <p>For most cases, this mode is most likely to give the expected
+		 * <p>For most cases, this beans is most likely to give the expected
 		 * result because in treats URI variables as opaque data to be fully
 		 * encoded, while {@link #URI_COMPONENT} by comparison is useful only
 		 * if intentionally expanding URI variables with reserved characters.

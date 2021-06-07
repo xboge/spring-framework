@@ -130,7 +130,7 @@ class ScriptBeanDefinitionParser extends AbstractBeanDefinitionParser {
 			bd.setScope(scope);
 		}
 
-		// Determine autowire mode.
+		// Determine autowire beans.
 		String autowire = element.getAttribute(AUTOWIRE_ATTRIBUTE);
 		int autowireMode = parserContext.getDelegate().getAutowireMode(autowire);
 		// Only "byType" and "byName" supported, but maybe other default inherited...

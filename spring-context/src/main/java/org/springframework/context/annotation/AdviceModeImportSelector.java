@@ -36,9 +36,9 @@ import org.springframework.util.Assert;
 public abstract class AdviceModeImportSelector<A extends Annotation> implements ImportSelector {
 
 	/**
-	 * The default advice mode attribute name.
+	 * The default advice beans attribute name.
 	 */
-	public static final String DEFAULT_ADVICE_MODE_ATTRIBUTE_NAME = "mode";
+	public static final String DEFAULT_ADVICE_MODE_ATTRIBUTE_NAME = "beans";
 
 
 	/**
@@ -54,7 +54,7 @@ public abstract class AdviceModeImportSelector<A extends Annotation> implements 
 	 * This implementation resolves the type of annotation from generic metadata and
 	 * validates that (a) the annotation is in fact present on the importing
 	 * {@code @Configuration} class and (b) that the given annotation has an
-	 * {@linkplain #getAdviceModeAttributeName() advice mode attribute} of type
+	 * {@linkplain #getAdviceModeAttributeName() advice beans attribute} of type
 	 * {@link AdviceMode}.
 	 * <p>The {@link #selectImports(AdviceMode)} method is then invoked, allowing the
 	 * concrete implementation to choose imports in a safe and convenient fashion.
@@ -88,7 +88,7 @@ public abstract class AdviceModeImportSelector<A extends Annotation> implements 
 	 * could not be handled or was unknown and that an {@code IllegalArgumentException}
 	 * should be thrown.
 	 * @param adviceMode the value of the {@linkplain #getAdviceModeAttributeName()
-	 * advice mode attribute} for the annotation specified via generics.
+	 * advice beans attribute} for the annotation specified via generics.
 	 * @return array containing classes to import (empty array if none;
 	 * {@code null} if the given {@code AdviceMode} is unknown)
 	 */

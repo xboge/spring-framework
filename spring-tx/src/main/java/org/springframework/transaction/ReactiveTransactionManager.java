@@ -44,7 +44,7 @@ public interface ReactiveTransactionManager extends TransactionManager {
 	 * by every transaction manager: A proper transaction manager implementation
 	 * should throw an exception when unsupported settings are encountered.
 	 * <p>An exception to the above rule is the read-only flag, which should be
-	 * ignored if no explicit read-only mode is supported. Essentially, the
+	 * ignored if no explicit read-only beans is supported. Essentially, the
 	 * read-only flag is just a hint for potential optimization.
 	 * @param definition the TransactionDefinition instance,
 	 * describing propagation behavior, isolation level, timeout etc.

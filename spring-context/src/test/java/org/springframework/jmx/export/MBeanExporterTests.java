@@ -402,9 +402,9 @@ public class MBeanExporterTests extends AbstractMBeanServerTests {
 		exporter.setAutodetectMode(MBeanExporter.AUTODETECT_MBEAN);
 		start(exporter);
 
-		assertIsRegistered("Bona fide MBean not autodetected in AUTODETECT_MBEAN mode",
+		assertIsRegistered("Bona fide MBean not autodetected in AUTODETECT_MBEAN beans",
 				ObjectNameManager.getInstance(OBJECT_NAME));
-		assertIsNotRegistered("Bean autodetected and (only) AUTODETECT_MBEAN mode is on",
+		assertIsNotRegistered("Bean autodetected and (only) AUTODETECT_MBEAN beans is on",
 				ObjectNameManager.getInstance(exportedBeanName));
 	}
 
@@ -424,9 +424,9 @@ public class MBeanExporterTests extends AbstractMBeanServerTests {
 		exporter.setBeanFactory(factory);
 		exporter.setAutodetectMode(MBeanExporter.AUTODETECT_ALL);
 		start(exporter);
-		assertIsRegistered("Bona fide MBean not autodetected in (AUTODETECT_ALL) mode",
+		assertIsRegistered("Bona fide MBean not autodetected in (AUTODETECT_ALL) beans",
 				ObjectNameManager.getInstance(OBJECT_NAME));
-		assertIsRegistered("Bean not autodetected in (AUTODETECT_ALL) mode",
+		assertIsRegistered("Bean not autodetected in (AUTODETECT_ALL) beans",
 				ObjectNameManager.getInstance(exportedBeanName));
 		assertIsNotRegistered("Bean autodetected and did not satisfy the autodetect info assembler",
 				ObjectNameManager.getInstance(notToBeExportedBeanName));
@@ -446,9 +446,9 @@ public class MBeanExporterTests extends AbstractMBeanServerTests {
 		exporter.setBeanFactory(factory);
 		exporter.setAutodetectMode(MBeanExporter.AUTODETECT_ASSEMBLER);
 		start(exporter);
-		assertIsNotRegistered("Bona fide MBean was autodetected in AUTODETECT_ASSEMBLER mode - must not have been",
+		assertIsNotRegistered("Bona fide MBean was autodetected in AUTODETECT_ASSEMBLER beans - must not have been",
 				ObjectNameManager.getInstance(OBJECT_NAME));
-		assertIsRegistered("Bean not autodetected in AUTODETECT_ASSEMBLER mode",
+		assertIsRegistered("Bean not autodetected in AUTODETECT_ASSEMBLER beans",
 				ObjectNameManager.getInstance(exportedBeanName));
 	}
 
@@ -633,7 +633,7 @@ public class MBeanExporterTests extends AbstractMBeanServerTests {
 		exporter.addExcludedBean(secondBeanName);
 
 		start(exporter);
-		assertIsRegistered("Bean not autodetected in (AUTODETECT_ALL) mode",
+		assertIsRegistered("Bean not autodetected in (AUTODETECT_ALL) beans",
 				ObjectNameManager.getInstance(firstBeanName));
 		assertIsNotRegistered("Bean should have been excluded",
 				ObjectNameManager.getInstance(secondBeanName));

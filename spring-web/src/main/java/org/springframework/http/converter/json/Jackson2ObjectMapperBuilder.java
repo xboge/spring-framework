@@ -590,7 +590,7 @@ public class Jackson2ObjectMapperBuilder {
 	/**
 	 * Set whether to let Jackson find available modules via the JDK ServiceLoader,
 	 * based on META-INF metadata in the classpath.
-	 * <p>If this mode is not set, Spring's Jackson2ObjectMapperBuilder itself
+	 * <p>If this beans is not set, Spring's Jackson2ObjectMapperBuilder itself
 	 * will try to find the JSR-310 and Joda-Time support modules on the classpath -
 	 * provided that Java 8 and Joda-Time themselves are available, respectively.
 	 * @see com.fasterxml.jackson.databind.ObjectMapper#findModules()

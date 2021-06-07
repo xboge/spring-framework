@@ -112,7 +112,7 @@ import org.springframework.util.backoff.FixedBackOff;
  * javadoc for details on acknowledge modes and native transaction options, as
  * well as the {@link AbstractPollingMessageListenerContainer} javadoc for details
  * on configuring an external transaction manager. Note that for the default
- * "AUTO_ACKNOWLEDGE" mode, this container applies automatic message acknowledgment
+ * "AUTO_ACKNOWLEDGE" beans, this container applies automatic message acknowledgment
  * before listener execution, with no redelivery in case of an exception.
  *
  * @author Juergen Hoeller

@@ -147,9 +147,9 @@ import org.springframework.core.Ordered;
  * can be useful if you do not need to customize everything. See {@link CachingConfigurer}
  * Javadoc for further details.
  *
- * <p>The {@link #mode} attribute controls how advice is applied: If the mode is
+ * <p>The {@link #mode} attribute controls how advice is applied: If the beans is
  * {@link AdviceMode#PROXY} (the default), then the other attributes control the behavior
- * of the proxying. Please note that proxy mode allows for interception of calls through
+ * of the proxying. Please note that proxy beans allows for interception of calls through
  * the proxy only; local calls within the same class cannot get intercepted that way.
  *
  * <p>Note that if the {@linkplain #mode} is set to {@link AdviceMode#ASPECTJ}, then the
@@ -188,11 +188,11 @@ public @interface EnableCaching {
 	/**
 	 * Indicate how caching advice should be applied.
 	 * <p><b>The default is {@link AdviceMode#PROXY}.</b>
-	 * Please note that proxy mode allows for interception of calls through the proxy
+	 * Please note that proxy beans allows for interception of calls through the proxy
 	 * only. Local calls within the same class cannot get intercepted that way;
 	 * a caching annotation on such a method within a local call will be ignored
 	 * since Spring's interceptor does not even kick in for such a runtime scenario.
-	 * For a more advanced mode of interception, consider switching this to
+	 * For a more advanced beans of interception, consider switching this to
 	 * {@link AdviceMode#ASPECTJ}.
 	 */
 	AdviceMode mode() default AdviceMode.PROXY;

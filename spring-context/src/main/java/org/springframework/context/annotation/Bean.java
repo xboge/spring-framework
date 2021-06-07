@@ -114,7 +114,7 @@ import org.springframework.core.annotation.AliasFor;
  * would. These are the semantics known from the original 'Spring JavaConfig' project
  * which require CGLIB subclassing of each such configuration class at runtime. As a
  * consequence, {@code @Configuration} classes and their factory methods must not be
- * marked as final or private in this mode. For example:
+ * marked as final or private in this beans. For example:
  *
  * <pre class="code">
  * &#064;Configuration
@@ -138,21 +138,21 @@ import org.springframework.core.annotation.AliasFor;
  * <p>{@code @Bean} methods may also be declared within classes that are <em>not</em>
  * annotated with {@code @Configuration}. For example, bean methods may be declared
  * in a {@code @Component} class or even in a <em>plain old class</em>. In such cases,
- * a {@code @Bean} method will get processed in a so-called <em>'lite'</em> mode.
+ * a {@code @Bean} method will get processed in a so-called <em>'lite'</em> beans.
  *
- * <p>Bean methods in <em>lite</em> mode will be treated as plain <em>factory
+ * <p>Bean methods in <em>lite</em> beans will be treated as plain <em>factory
  * methods</em> by the container (similar to {@code factory-method} declarations
  * in XML), with scoping and lifecycle callbacks properly applied. The containing
  * class remains unmodified in this case, and there are no unusual constraints for
  * the containing class or the factory methods.
  *
  * <p>In contrast to the semantics for bean methods in {@code @Configuration} classes,
- * <em>'inter-bean references'</em> are not supported in <em>lite</em> mode. Instead,
+ * <em>'inter-bean references'</em> are not supported in <em>lite</em> beans. Instead,
  * when one {@code @Bean}-method invokes another {@code @Bean}-method in <em>lite</em>
- * mode, the invocation is a standard Java method invocation; Spring does not intercept
+ * beans, the invocation is a standard Java method invocation; Spring does not intercept
  * the invocation via a CGLIB proxy. This is analogous to inter-{@code @Transactional}
- * method calls where in proxy mode, Spring does not intercept the invocation &mdash;
- * Spring does so only in AspectJ mode.
+ * method calls where in proxy beans, Spring does not intercept the invocation &mdash;
+ * Spring does so only in AspectJ beans.
  *
  * <p>For example:
  *
@@ -241,9 +241,9 @@ public @interface Bean {
 
 	/**
 	 * Are dependencies to be injected via convention-based autowiring by name or type?
-	 * <p>Note that this autowire mode is just about externally driven autowiring based
+	 * <p>Note that this autowire beans is just about externally driven autowiring based
 	 * on bean property setter methods by convention, analogous to XML bean definitions.
-	 * <p>The default mode does allow for annotation-driven autowiring. "no" refers to
+	 * <p>The default beans does allow for annotation-driven autowiring. "no" refers to
 	 * externally driven autowiring only, not affecting any autowiring demands that the
 	 * bean class itself expresses through annotations.
 	 * @see Autowire#BY_NAME

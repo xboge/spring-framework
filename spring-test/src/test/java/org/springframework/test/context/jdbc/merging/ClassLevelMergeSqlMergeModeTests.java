@@ -28,7 +28,7 @@ import static org.springframework.test.context.jdbc.SqlMergeMode.MergeMode.OVERR
  * Transactional integration tests that verify proper merging and overriding support
  * for class-level and method-level {@link Sql @Sql} declarations when
  * {@link SqlMergeMode @SqlMergeMode} is declared at the class level with
- * {@link SqlMergeMode.MergeMode#MERGE MERGE} mode.
+ * {@link SqlMergeMode.MergeMode#MERGE MERGE} beans.
  *
  * @author Sam Brannen
  * @author Dmitry Semukhin

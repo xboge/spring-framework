@@ -30,12 +30,12 @@ import java.lang.annotation.Target;
  * ApplicationContext}.
  *
  * <p>If {@code @TestConstructor} is not <em>present</em> or <em>meta-present</em>
- * on a test class, the default <em>test constructor autowire mode</em> will be
+ * on a test class, the default <em>test constructor autowire beans</em> will be
  * used. See {@link #TEST_CONSTRUCTOR_AUTOWIRE_MODE_PROPERTY_NAME} for details on
- * how to change the default mode. Note, however, that a local declaration of
+ * how to change the default beans. Note, however, that a local declaration of
  * {@link org.springframework.beans.factory.annotation.Autowired @Autowired} on
  * a constructor takes precedence over both {@code @TestConstructor} and the default
- * mode.
+ * beans.
  *
  * <p>This annotation may be used as a <em>meta-annotation</em> to create custom
  * <em>composed annotations</em>.
@@ -67,11 +67,11 @@ public @interface TestConstructor {
 
 	/**
 	 * JVM system property used to change the default <em>test constructor
-	 * autowire mode</em>: {@value #TEST_CONSTRUCTOR_AUTOWIRE_MODE_PROPERTY_NAME}.
+	 * autowire beans</em>: {@value #TEST_CONSTRUCTOR_AUTOWIRE_MODE_PROPERTY_NAME}.
 	 * <p>Acceptable values include enum constants defined in {@link AutowireMode},
 	 * ignoring case. For example, the default may be changed to {@link AutowireMode#ALL}
 	 * by supplying the following JVM system property via the command line.
-	 * <pre style="code">-Dspring.test.constructor.autowire.mode=all</pre>
+	 * <pre style="code">-Dspring.test.constructor.autowire.beans=all</pre>
 	 * <p>If the property is not set to {@code ALL}, parameters for test class
 	 * constructors will be autowired according to {@link AutowireMode#ANNOTATED}
 	 * semantics by default.
@@ -80,12 +80,12 @@ public @interface TestConstructor {
 	 * mechanism.
 	 * @see #autowireMode
 	 */
-	String TEST_CONSTRUCTOR_AUTOWIRE_MODE_PROPERTY_NAME = "spring.test.constructor.autowire.mode";
+	String TEST_CONSTRUCTOR_AUTOWIRE_MODE_PROPERTY_NAME = "spring.test.constructor.autowire.beans";
 
 
 	/**
 	 * Flag for setting the <em>test constructor {@linkplain AutowireMode autowire
-	 * mode}</em> for the current test class.
+	 * beans}</em> for the current test class.
 	 * <p>Setting this flag overrides the global default. See
 	 * {@link #TEST_CONSTRUCTOR_AUTOWIRE_MODE_PROPERTY_NAME} for details on how
 	 * to change the global default.

@@ -151,7 +151,7 @@ public class DummyFactory
 
 	/**
 	 * Return the managed object, supporting both singleton
-	 * and prototype mode.
+	 * and prototype beans.
 	 * @see FactoryBean#getObject()
 	 */
 	@Override

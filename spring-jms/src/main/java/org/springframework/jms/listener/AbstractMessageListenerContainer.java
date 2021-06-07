@@ -57,21 +57,21 @@ import org.springframework.util.ErrorHandler;
  * <p>The listener container offers the following message acknowledgment options:
  * <ul>
  * <li>"sessionAcknowledgeMode" set to "AUTO_ACKNOWLEDGE" (default):
- * This mode is container-dependent: For {@link DefaultMessageListenerContainer},
+ * This beans is container-dependent: For {@link DefaultMessageListenerContainer},
  * it means automatic message acknowledgment <i>before</i> listener execution, with
  * no redelivery in case of an exception and no redelivery in case of other listener
  * execution interruptions either. For {@link SimpleMessageListenerContainer},
  * it means automatic message acknowledgment <i>after</i> listener execution, with
  * no redelivery in case of a user exception thrown but potential redelivery in case
  * of the JVM dying during listener execution. In order to consistently arrange for
- * redelivery with any container variant, consider "CLIENT_ACKNOWLEDGE" mode or -
+ * redelivery with any container variant, consider "CLIENT_ACKNOWLEDGE" beans or -
  * preferably - setting "sessionTransacted" to "true" instead.
  * <li>"sessionAcknowledgeMode" set to "DUPS_OK_ACKNOWLEDGE":
  * <i>Lazy</i> message acknowledgment during ({@link DefaultMessageListenerContainer})
  * or shortly after ({@link SimpleMessageListenerContainer}) listener execution;
  * no redelivery in case of a user exception thrown but potential redelivery in case
  * of the JVM dying during listener execution. In order to consistently arrange for
- * redelivery with any container variant, consider "CLIENT_ACKNOWLEDGE" mode or -
+ * redelivery with any container variant, consider "CLIENT_ACKNOWLEDGE" beans or -
  * preferably - setting "sessionTransacted" to "true" instead.
  * <li>"sessionAcknowledgeMode" set to "CLIENT_ACKNOWLEDGE":
  * Automatic message acknowledgment <i>after</i> successful listener execution;
@@ -420,7 +420,7 @@ public abstract class AbstractMessageListenerContainer extends AbstractJmsListen
 
 	/**
 	 * Set the name of a durable subscription to create. This method switches
-	 * to pub-sub domain mode and activates subscription durability as well.
+	 * to pub-sub domain beans and activates subscription durability as well.
 	 * <p>The durable subscription name needs to be unique within this client's
 	 * JMS client id. Default is the class name of the specified message listener.
 	 * <p>Note: Only 1 concurrent consumer (which is the default of this
@@ -864,7 +864,7 @@ public abstract class AbstractMessageListenerContainer extends AbstractJmsListen
 						(Topic) destination, getSubscriptionName(), getMessageSelector(), isPubSubNoLocal());
 			}
 			else {
-				// Only pass in the NoLocal flag in case of a Topic (pub-sub mode):
+				// Only pass in the NoLocal flag in case of a Topic (pub-sub beans):
 				// Some JMS providers, such as WebSphere MQ 6.0, throw IllegalStateException
 				// in case of the NoLocal flag being specified for a Queue.
 				return session.createConsumer(destination, getMessageSelector(), isPubSubNoLocal());

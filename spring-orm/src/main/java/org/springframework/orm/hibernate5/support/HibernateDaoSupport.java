@@ -33,7 +33,7 @@ import org.springframework.util.Assert;
  * subclasses through the {@link #getHibernateTemplate()} method.
  * Can alternatively be initialized directly with a HibernateTemplate,
  * in order to reuse the latter's settings such as the SessionFactory,
- * exception translator, flush mode, etc.
+ * exception translator, flush beans, etc.
  *
  * <p>This class will create its own HibernateTemplate instance if a SessionFactory
  * is passed in. The "allowCreate" flag on that HibernateTemplate will be "true"

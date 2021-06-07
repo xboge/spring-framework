@@ -55,7 +55,7 @@ public interface ParserContext {
 
 	/**
 	 * The default ParserContext implementation that enables template expression
-	 * parsing mode. The expression prefix is "#{" and the expression suffix is "}".
+	 * parsing beans. The expression prefix is "#{" and the expression suffix is "}".
 	 * @see #isTemplate()
 	 */
 	ParserContext TEMPLATE_EXPRESSION = new ParserContext() {
