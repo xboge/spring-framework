@@ -24,7 +24,7 @@ public class MyBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
             throws BeansException {
         //通过bean工厂拿到业务类InterService的beanDefinition
         GenericBeanDefinition beanDefinition =
-                (GenericBeanDefinition) beanFactory.getBeanDefinition("interService");
+                (GenericBeanDefinition) beanFactory.getBeanDefinition("personService");
         System.out.println("扫描注册成功完成后，spring自动调用次方法");
         System.out.println(beanDefinition.getDescription());
     }

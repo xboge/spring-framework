@@ -34,7 +34,8 @@ public class SpringbogeBootstrap {
 		//Config.java  主要是注册配置类，告知扫描的包名或者配置文件等
 		context.register(Config.class);
 		//所有xml配置或者注解，均是为了生成BeanDefinition对象，也可以自己创建该对象，注册到spring容器中
-//		context.refresh();context.registerBeanDefinition();
+		//context.registerBeanDefinition();
+		context.refresh();
 
 		//获取PersonService对应的BeanDefinition ，默认名称为personService，关于名字的更改以后讲。
 		BeanDefinition interServiceBeanDefinition = context.getBeanDefinition("personService");
